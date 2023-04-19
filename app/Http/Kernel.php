@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
-    //holaa
+    //holaa aaaaaaaaaaaaaaaa
     /**
      * The application's global HTTP middleware stack.
      *

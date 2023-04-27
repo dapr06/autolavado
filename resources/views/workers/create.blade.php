@@ -5,7 +5,7 @@
     @method('post')
     @csrf
 
-    <x-workers_campo />
+    <x-workers-campos/>
 
     <br><br>
 

@@ -2,64 +2,83 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\booking;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $bookings = Booking::orderBy('date')->get();
+        return view('bookings/index', compact('bookings'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $bookings = Booking::orderBy('date')->get();
+        return view('bookings/create', compact('bookings'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'service_id' => 'required',
+            'client_id' => 'required',
+            'vehicle_id' => 'required',
+            'date' => 'required',
+            'hour' => 'required',
+            'number_services' => 'required',
+            'total_price' => 'required',
+        ]);
+
+        $booking = new Booking();
+        $booking->service_id = $request->service_id;
+        $booking->client_id = $request->client_id;
+        $booking->vehicle_id = $request->vehicle_id;
+        $booking->date = $request->date;
+        $booking->hour = $request->hour;
+        $booking->number_services = $request->number_services;
+        $booking->total_price = $request->total_price;
+        $booking->save();
+        return redirect()->route('bookings.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(booking $booking)
+    public function show(Booking $booking)
     {
-        //
+        return view('bookings/show', compact('booking'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(booking $booking)
+    public function edit(Booking $booking)
     {
-        //
+        return view('bookings/edit', compact('booking'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, booking $booking)
+    public function update(Request $request, Booking $booking)
     {
-        //
+        $this->validate($request, [
+            'service_id' => 'required',
+            'client_id' => 'required',
+            'vehicle_id' => 'required',
+            'date' => 'required',
+            'hour' => 'required',
+            'number_services' => 'required',
+            'total_price' => 'required',
+        ]);
+
+        $booking->service_id = $request->service_id;
+        $booking->client_id = $request->client_id;
+        $booking->vehicle_id = $request->vehicle_id;
+        $booking->date = $request->date;
+        $booking->hour = $request->hour;
+        $booking->number_services = $request->number_services;
+        $booking->total_price = $request->total_price;
+        $booking->save();
+        return redirect()->route('bookings.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(booking $booking)
+    public function destroy(Booking $booking)
     {
-        //
+        $booking->delete();
+        return redirect()->route('bookings.index');
     }
 }

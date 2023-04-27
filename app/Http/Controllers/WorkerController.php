@@ -2,64 +2,100 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\worker;
+use App\Models\Worker;
 use Illuminate\Http\Request;
 
 class WorkerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $workers = Worker::orderBy('name')->get();
+        return view('workers/index', compact('workers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
+
     public function create()
     {
-        //
+
+        $workers = Worker::orderBy('name')->get();
+        return view('workers/create', compact('workers'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        {
+            $this->validate($request, [
+                'name' => 'required',
+                'surname' => 'required',
+                'DNI' => 'required',
+                'email' => 'required',
+                'role' => 'required',
+                'turn' => 'required|in:0,1',
+                'availability' => 'required',
+            ]);
+
+            $worker = new Worker();
+            $worker->name = $request->name;
+            $worker->surname = $request->surname;
+            $worker->DNI = $request->DNI;
+            $worker->email = $request->email;
+            $worker->role = $request->role;
+            $worker->turn = $request->turn;
+            $worker->availability = $request->availability;
+            $worker->save();
+            return redirect()->route('workers.index');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(worker $worker)
+
+    public function show(Worker $worker)
     {
-        //
+
+        $worker->turn = $worker->turn ? 'Tarde' : 'Mañana';
+        $worker->availability = $worker->availability ? 'Ocupado' : 'Libre';
+        return view('workers/show', compact('worker'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(worker $worker)
+
+    public function edit(Worker $worker)
     {
-        //
+
+        return view('workers.edit', compact('worker'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, worker $worker)
+
+    public function update(Request $request, Worker $worker)
     {
-        //
+        {
+            $this->validate($request, [
+                'name' => 'required',
+                'surname' => 'required',
+                'DNI' => 'required',
+                'email' => 'required',
+                'role' => 'required',
+                'turn' => 'required',
+                'availability' => 'required',
+            ]);
+
+
+            $worker->name = $request->name;
+            $worker->surname = $request->surname;
+            $worker->DNI = $request->DNI;
+            $worker->email = $request->email;
+            $worker->role = $request->role;
+            $worker->turn = $request->turn;
+            $worker->availability = $request->availability;
+            $worker->save();
+
+            return redirect()->route('workers.index');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(worker $worker)
+    public function destroy(Worker $worker)
     {
-        //
+        $worker->delete();
+        return redirect()->route('workers.index');
     }
 }

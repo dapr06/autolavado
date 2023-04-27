@@ -5,7 +5,7 @@
     @method('post')
     @csrf
 
-    <x-services_campo />
+    <x-services-campos/>
 
     <br><br>
 

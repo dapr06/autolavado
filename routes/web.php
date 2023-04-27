@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Support\Facades\Route;
 
 /*

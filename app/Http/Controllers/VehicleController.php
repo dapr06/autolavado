@@ -2,64 +2,69 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\vehicle;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $vehicles = Vehicle::orderBy('number_plate')->get();
+        return view('vehicles/index', compact('vehicles'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $vehicles = Vehicle::orderBy('number_plate')->get();
+        return view('vehicles/create', compact('vehicles'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'number_plate' => 'required',
+            'interior_type' => 'required',
+            'color' => 'required',
+        ]);
+
+        $vehicle = new Vehicle();
+        $vehicle->number_plate = $request->number_plate;
+        $vehicle->interior_type = $request->interior_type;
+        $vehicle->color = $request->color;
+        $vehicle->save();
+        return redirect()->route('vehicles.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(vehicle $vehicle)
+    public function show(Vehicle $vehicle)
     {
-        //
+        $vehicles = Vehicle::orderBy('number_plate')->get();
+        return view('vehicles/show', compact('vehicle'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(vehicle $vehicle)
+    public function edit(Vehicle $vehicle)
     {
-        //
+        return view('vehicles/edit', compact('vehicle'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, vehicle $vehicle)
+    public function update(Request $request, Vehicle $vehicle)
     {
-        //
+        $this->validate($request, [
+            'number_plate' => 'required',
+            'interior_type' => 'required',
+            'color' => 'required',
+        ]);
+
+        $vehicle->number_plate = $request->number_plate;
+        $vehicle->interior_type = $request->interior_type;
+        $vehicle->color = $request->color;
+        $vehicle->save();
+        return redirect()->route('vehicles.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(vehicle $vehicle)
+    public function destroy(Vehicle $vehicle)
     {
-        //
+        $vehicle->delete();
+        return redirect()->route('vehicles.index');
     }
 }

@@ -13,8 +13,7 @@ return new class extends Migration
 
                 'name' => 'administrador',
                 'email' =>'admi@admi.com',
-               // 'password' => '$2y$10$U5Ihnkt.MdPL/uOJBN3YKu3mt/IqNP.SiUyl1yTXFKdfksERKse9C',
-            'password' => bcrypt('123456789'),
+               'password' => bcrypt('123456789'),
 
         ]);
 

@@ -1,13 +1,13 @@
-<h2>Crear trabajadores</h2>
+<x-app-layout>
+    <h2>Crear trabajadores</h2>
 
+    <form action='{{ route('workers.store') }}' method='post'>
+        @method('post')
+        @csrf
 
-<form action='{{ route('workers.store') }}' method='post'>
-    @method('post')
-    @csrf
+        <x-workers-campos/>
 
-    <x-workers-campos/>
-
-    <br><br>
-
-    <input class='button' type='submit' name='crear' value='Crear trabajador' />
-</form><br/>
+        <br><br>
+        <input class='button' type='submit' name='crear' value='Crear trabajador' />
+    </form><br/>
+</x-app-layout>

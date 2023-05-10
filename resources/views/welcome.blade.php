@@ -17,5 +17,6 @@
     </head>
     <body class="antialiased">
         <x-menu/>
+        <p>Este es el Welcome vacío (por ahora)</p>
     </body>
 </html>

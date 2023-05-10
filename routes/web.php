@@ -41,5 +41,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+Route::get('/services', function (){
+    $services = \App\Models\Service::orderBy('id')-> get();
+    return view('/services/index', compact('services'));
+})->name('services.index');
 

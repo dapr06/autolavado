@@ -1,4 +1,4 @@
-<x-app-layout>
+
     <h2>Servicios</h2>
     <table border="1">
         <tr>
@@ -27,6 +27,6 @@
         @endforeach
     </table><br><br>
     <button><a href='{{ route('services.create') }}'>Crear servicio</a></button><br><br>
-</x-app-layout>
+
 
 

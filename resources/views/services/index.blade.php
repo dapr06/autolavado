@@ -1,4 +1,4 @@
-<x-menu/>
+<x-menu></x-menu>
     <h2>Servicios</h2>
     <table border="1">
         <tr>

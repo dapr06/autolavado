@@ -11,7 +11,7 @@
 }
 .menua{
     /*color: black;*/
-    margin: 70px;
+    margin: 60px;
     text-decoration: none;
     color: inherit;
     cursor: default;
@@ -43,7 +43,7 @@
 .form{
     text-align: right;
     size: 50px;
-   margin-right: 320px;
+    margin-right: 320px;
     margin-top: 100px;
 }
 

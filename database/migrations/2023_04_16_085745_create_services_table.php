@@ -16,8 +16,8 @@ return new class extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('name',50);
-            $table->string('description', 100);
+            $table->string('name',100);
+            $table->string('description', 200);
             $table->decimal('price',10, 2);
             $table->timestamps();
         });

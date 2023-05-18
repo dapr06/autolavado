@@ -53,15 +53,63 @@ return new class extends Migration
         DB::table('services')->insert([
             [
                 'worker_id' => '2',
-                'name' =>'limpiar',
-                'description' => 'asnkjc',
-                'price' => '25',
+                'name' =>'Lavado exterior',
+                'description' => '20min. Lavado exterior del vehículo.',
+                'price' => '15',
+            ],
+            [
+                'worker_id' => '2',
+                'name' =>'Lavado exterior premium',
+                'description' => 'Incluye lavado a presión, eliminación de suciedad incrustada, limpieza de llantas y abrillantado de neumáticos.',
+                'price' => '22',
+            ],
+            [
+                'worker_id' => '2',
+                'name' =>'Lavado exterior e interior estándar',
+                'description' => '45-60min. Incluye lavado exterior básico y limpieza de alfombras, asientos y salpicadero.',
+                'price' => '35',
+            ],
+            [
+                'worker_id' => '2',
+                'name' =>'Lavado exterior e interior premium',
+                'description' => '1-1ymedia. Incluye lavado exterior premium y limpieza a fondo de tapicería, paneles de puertas, consola central y ventanas.',
+                'price' => '50',
+            ],
+            [
+                'worker_id' => '2',
+                'name' =>'Servicio de encerado',
+                'description' => '40-60min. Aplicación de cera protectora en la carrocería.',
+                'price' => '30',
+            ],
+            [
+                'worker_id' => '2',
+                'name' =>'Pulido y abrillantado de carrocería',
+                'description' => '2h. Elimina arañazos y marcas superficiales, dejando la carrocería con un brillo intenso.',
+                'price' => '150',
             ],
             [
                 'worker_id' => '1',
-                'name' =>'secar',
-                'description' => 'secar',
-                'price' => '20',
+                'name' =>'Restauración de faros delanteros',
+                'description' => '1h. Elimina el desgaste y la opacidad de los faros, mejorando la visibilidad y la apariencia del vehículo.',
+                'price' => '70',
+            ],
+            [
+                'worker_id' => '1',
+                'name' =>'Limpieza y acondicionamiento de cuero',
+                'description' => '1-2h. Limpia y nutre los asientos y revestimientos de cuero, dejándolos suaves y protegidos.',
+                'price' => '60',
+            ],
+            [
+                'worker_id' => '1',
+                'name' =>'Limpieza de techo interior y paneles',
+                'description' => '30-1h. Elimina manchas y suciedad de los paneles de techo y otros revestimientos interiores.',
+                'price' => '45',
+            ],
+            [
+                'worker_id' => '1',
+                'name' =>'Detallado completo',
+                'description' => '2-4h. Incluye lavado exterior premium, limpieza exhaustiva del interior, pulido de carrocería, encerado y limpieza de motor.',
+                'price' => '120',
             ]
         ]);
         DB::table('clients')->insert([

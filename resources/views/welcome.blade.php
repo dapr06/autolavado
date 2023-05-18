@@ -40,7 +40,7 @@
                         adicionales como pulido, encerado y limpieza de tapicería.</p><br>
                 </div>
                 <div class="col-md-4">
-                    @include('carousel')
+                    <img src="/img/coche3.jpg" class="rounded" height="235">
                 </div>
             </div>
  <!------------------------------------------------------------------------------------------------------------>
@@ -88,16 +88,25 @@
                 </div>
             </div>
 <!------------------------------------------------------------------------------------------------------------>
-            <br><h3 class="text-center font-italic">"¡Tu coche, nuestra pasión por la perfección!"</h3>
-            <div class="text-justify">
-                <p> En Chapuzón, nos apasiona el cuidado y la limpieza de vehículos. Nuestro lema refleja nuestra
-                    dedicación para lograr la perfección en cada servicio que brindamos. Nos esforzamos por superar
-                    expectativas de nuestros clientes y cuidar de sus coches como si fueran nuestros propios vehículos.
-                </p><br>
+            <br><h3 class="text-center font-italic">"¡Tu coche, nuestra pasión por la perfección!"</h3><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/coche4.jpg" class="rounded" height="235">
+                </div>
+                <div class="col-md-4 text-justify">
+                    <br>
+                    <p> En Chapuzón, nos apasiona el cuidado y la limpieza de vehículos. Nuestro lema refleja nuestra
+                        dedicación para lograr la perfección en cada servicio que brindamos. Nos esforzamos por superar
+                        expectativas de nuestros clientes y cuidar de sus coches como si fueran nuestros propios vehículos.
+                    </p><br>
+                </div>
+                <div class="col-md-4">
+                    <img src="/img/coche2.jpg" class="rounded" height="235">
+                </div>
             </div>
 <!------------------------------------------------------------------------------------------------------------>
             <!--Politicas de empresa-->
-            <h3>Políticas de empresa.</h3><br>
+            <br><h3>Políticas de empresa.</h3><br>
             <div class="row">
                     <div class="col-md-3">
                         <div class="card">

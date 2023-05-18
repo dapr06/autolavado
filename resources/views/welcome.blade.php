@@ -40,7 +40,7 @@
                         adicionales como pulido, encerado y limpieza de tapicería.</p><br>
                 </div>
                 <div class="col-md-4">
-                    {{--@include('carousel')--}}
+                    @include('carousel')
                 </div>
             </div>
  <!------------------------------------------------------------------------------------------------------------>

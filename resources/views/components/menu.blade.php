@@ -1,6 +1,6 @@
 <div class="menu">
     <link rel='stylesheet' href='/css/app.css'>
-    <a class="menua" href="{{ url('/') }}">Logo</a>
+    <a class="menua" href="{{ url('/') }}"><img src="/img/chapuzonLogo.png" width="120" height="40"></a>
     <a class="menua" href="{{ url('/') }}">Nosotros</a>
     <a class="menua" href="{{ url('/services') }}">Servicios</a>
     <a class="menua" href="{{ url('/contacts') }}">Contacto</a>

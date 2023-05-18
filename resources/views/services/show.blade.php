@@ -1,9 +1,10 @@
 <x-app-layout>
     <h1>Listado de servicios</h1>
 
-    <p>Id_worker: {{$service->worker_id}}</p>
+
     <p>Name: {{$service->name}}</p>
     <p>Description: {{$service->description}}</p>
+    <p>Time: {{$service->time}}</p>
     <p>Price: {{$service->price}}</p>
 
     <a href='{{ route('services.edit', $service) }}'>Editar servicio</a>

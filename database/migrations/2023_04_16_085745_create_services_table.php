@@ -12,12 +12,9 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Worker::class)
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
             $table->string('name',100);
             $table->string('description', 200);
+            $table->char('time', 60);
             $table->decimal('price',10, 2);
             $table->timestamps();
         });

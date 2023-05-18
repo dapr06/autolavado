@@ -5,16 +5,19 @@
 @tailwind utilities;
 
 .menu{
-    text-align: center;
+    align-items: center;
     background: dodgerblue;
+    display: flex;
+    flex-wrap: nowrap;
 
 }
 .menua{
     /*color: black;*/
-    margin: 60px;
+/*    margin-top: 5px;*/
+    margin-right: 100px;
     text-decoration: none;
     color: inherit;
-    cursor: default;
+
 }
 
 .tittle{
@@ -47,7 +50,14 @@
     margin-top: 100px;
 }
 
-.log_in{
-    color:black;
-    opacity: 1;
+.inicios{
+    width: 30px;
+    height: 30px;
+    /*margin-top: 0;*/
+}
+
+#logueado{
+    color: inherit;
+    margin-left: auto;
+
 }

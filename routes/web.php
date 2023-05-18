@@ -46,3 +46,7 @@ Route::get('/services', function (){
     return view('/services/index', compact('services'));
 })->name('services.index');
 
+Route::get('/contacts', function (){
+    return view('/contacts/index');
+})->name('contacts.index');
+

@@ -27,4 +27,4 @@
     <button><a href='{{ route('services.create') }}'>Crear servicio</a></button><br><br>
 
 
-
+<x-footer></x-footer>

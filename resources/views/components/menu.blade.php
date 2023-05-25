@@ -4,7 +4,6 @@
     <a class="menua" href="{{ url('/') }}">Nosotros</a>
     <a class="menua" href="{{ url('/services') }}">Servicios</a>
     <a class="menua" href="{{ url('/contacts') }}">Contacto</a>
-    <a class="menua" href="{{ url('#') }}">Trabaja con nosotros</a>
     <a class="menua" href="{{ url('/bookings') }}">Reserva/Carrito</a>
 
     @if (Route::has('login'))

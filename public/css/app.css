@@ -4,19 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    display: flex;
+    flex-direction: column;
+
+}
 .menu{
     align-items: center;
     background: dodgerblue;
     display: flex;
     flex-wrap: nowrap;
+    color: white;
 
 }
 .menua{
-    /*color: black;*/
-/*    margin-top: 5px;*/
-    margin-right: 100px;
+    margin-right: 175px;
     text-decoration: none;
     color: inherit;
+    margin-top: 5px;
 
 }
 
@@ -31,24 +36,7 @@
     width: 50%;
     height: 80%;
 }
-.pcontact{
-    text-align: right;
-    margin-right: 320px;
-    margin-top: 10px;
-}
 
-.pcontact1{
-    text-align: right;
-    margin-right: 320px;
-    margin-top: 65px;
-}
-
-.form{
-    text-align: right;
-    size: 50px;
-    margin-right: 320px;
-    margin-top: 100px;
-}
 
 .inicios{
     width: 30px;
@@ -59,5 +47,102 @@
 #logueado{
     color: inherit;
     margin-left: auto;
+
+}
+
+
+#wrapper {
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: dodgerblue;
+    color: white;
+    flex: 1;
+    border-radius: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: deepskyblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 135px;
+
+}
+.mapa {
+    width: 50%;
+    height: 80%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    display: block;
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+.footeri{
+    width: 30px;
+    height: 30px;
+}
+
+ul.centered-list {
+    list-style-type: none;
+}
+
+ul.centered-list li.no-marker {
+    list-style-type: none;
+}
+
+ul.no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+ul.social-media {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul.social-media li {
+    margin: 0;
+    padding: 0;
+}
+
+ul.social-media li a {
+    display: inline-block;
 
 }

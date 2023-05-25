@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1> Edita cliente: {{$client->name}} {{$client->surname}}</h1>
     <br>
     <form action='{{route('clients.update',$client)}}' method='post'>
@@ -23,4 +23,4 @@
     </form>
 
     <a href='{{ route('clients.index') }}'>Ir al listado de clientes</a>
-</x-app-layout>
+<x-footer/>

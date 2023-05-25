@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Crear trabajadores</h2>
 
     <form action='{{ route('workers.store') }}' method='post'>
@@ -10,4 +10,4 @@
         <br><br>
         <input class='button' type='submit' name='crear' value='Crear trabajador' />
     </form><br/>
-</x-app-layout>
+<x-footer/>

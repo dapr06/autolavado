@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1> Edita servicio {{$service->name}}</h1>
     <br>
     <form action='{{route('services.update',$service)}}' method='post'>
@@ -20,4 +20,4 @@
     </form>
 
     <a href='{{ route('services.index') }}'>Ir al listado de servicios</a>
-</x-app-layout>
+<x-footer/>

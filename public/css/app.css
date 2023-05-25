@@ -10,18 +10,19 @@ body{
 
 }
 .menu{
-    align-items: center;
     background: dodgerblue;
     display: flex;
     flex-wrap: nowrap;
     color: white;
+    justify-content: space-between;
+    align-items: center;
 
 }
 .menua{
-    margin-right: 175px;
+    margin-right: 100px;
     text-decoration: none;
     color: inherit;
-    margin-top: 5px;
+
 
 }
 
@@ -145,4 +146,18 @@ ul.social-media li {
 ul.social-media li a {
     display: inline-block;
 
+}
+.nombreuser {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout{
+    width: 20px;
+}
+
+#botoneditarp{
+    background: dodgerblue;
 }

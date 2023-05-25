@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1> Edita Vehículo {{$vehicle->number_plate}}</h1>
     <br>
     <form action='{{route('vehicles.update',$vehicle)}}' method='post'>
@@ -17,4 +17,4 @@
     </form>
 
     <a href='{{ route('vehicles.index') }}'>Ir al listado de vehículos</a>
-</x-app-layout>
+<x-footer/>

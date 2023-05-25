@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Clientes</h2>
     <table border="1">
         <tr>
@@ -28,7 +28,7 @@
     </table><br><br>
 
     <button><a href='{{ route('clients.create') }}'>Registrar cliente</a></button><br><br>
-</x-app-layout>
+<x-footer/>
 
 
 

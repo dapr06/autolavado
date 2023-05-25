@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <table border="1">
         <tr>
             <th>Matrícula</th>
@@ -22,6 +22,6 @@
         @endforeach
     </table><br><br>
     <button><a href='{{ route('vehicles.create') }}'>Registrar vehículo</a></button><br><br>
-</x-app-layout>
+<x-footer/>
 
 

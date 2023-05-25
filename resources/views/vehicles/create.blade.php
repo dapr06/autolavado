@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Registrar vehículos</h2>
 
     <form action='{{ route('vehicles.store') }}' method='post'>
@@ -9,4 +9,4 @@
 
         <input class='button' type='submit' name='crear' value='Registrar vehículo' />
     </form><br/>
-</x-app-layout>
+<x-footer/>

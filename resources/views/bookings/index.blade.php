@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Reservas</h2>
     <table border="1">
         <tr>
@@ -28,4 +28,4 @@
     </table><br><br>
 
     <button><a href='{{ route('bookings.create') }}'>Registrar reserva</a></button><br><br>
-</x-app-layout>
+<x-footer/>

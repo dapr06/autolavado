@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1>Listado de trabajadores</h1>
 
     <p>Name: {{$worker->name}}</p>
@@ -20,4 +20,4 @@
     <br>
 
     <a href='{{ route('workers.index') }}'>Volver al listado de trabajadores.</a>
-</x-app-layout>
+<x-footer/>

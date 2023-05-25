@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Trabajadores</h2>
     <table border="1">
         <tr>
@@ -34,4 +34,4 @@
     </table><br><br>
 
     <button><a href='{{ route('workers.create') }}'>Crear trabajador</a></button><br><br>
-</x-app-layout>
+<x-footer/>

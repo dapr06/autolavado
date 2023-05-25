@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1> Edita trabajador {{$worker->name}}</h1>
     <br>
     <form action='{{route('workers.update',$worker)}}' method='post'>
@@ -37,4 +37,4 @@
     </form>
 
     <a href='{{ route('workers.index') }}'>Ir al listado de trabajadores</a>
-</x-app-layout>
+<x-footer/>

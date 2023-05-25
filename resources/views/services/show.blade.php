@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1>Listado de servicios</h1>
 
 
@@ -16,4 +16,4 @@
     </form>
     <br>
     <a href='{{ route('services.index') }}'>Volver al listado de servicios.</a>
-</x-app-layout>
+<x-footer/>

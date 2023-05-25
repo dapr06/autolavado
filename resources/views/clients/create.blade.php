@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Crear cliente</h2>
 
     <form action='{{ route('clients.store') }}' method='post'>
@@ -10,4 +10,4 @@
         <br><br>
         <input class='button' type='submit' name='crear' value='Registrar cliente' />
     </form><br/>
-</x-app-layout>
+<x-footer/>

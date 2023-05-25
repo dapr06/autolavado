@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1>Listado de clientes</h1>
 
     <p>Id_vehiculo: {{$client->vehicle_id}}</p>
@@ -16,5 +16,5 @@
     </form><br>
 
     <a href='{{ route('clients.index') }}'>Volver al listado de cliente.</a>
-</x-app-layout>
+<x-footer/>
 

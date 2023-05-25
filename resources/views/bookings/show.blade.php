@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1>Listado de reservas</h1>
 
     <p>Id_service: {{$booking->service_id}}</p>
@@ -20,4 +20,4 @@
 
     <a href='{{ route('bookings.index') }}'>Volver al listado de reservas.</a>
 
-</x-app-layout>
+<x-footer/>

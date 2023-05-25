@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h2>Crear reserva</h2>
 
     <form action='{{ route('bookings.store') }}' method='post'>
@@ -10,4 +10,4 @@
         <br><br>
         <input class='button' type='submit' name='crear' value='Registrar reserva' />
     </form><br/>
-</x-app-layout>
+<x-footer/>

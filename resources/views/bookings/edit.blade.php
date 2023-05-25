@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-menu/>
     <h1> Edita reserva.</h1>
     <br>
     <form action='{{route('bookings.update',$booking)}}' method='post'>
@@ -29,4 +29,4 @@
     </form>
 
     <a href='{{ route('bookings.index') }}'>Ir al listado de reservas</a>
-</x-app-layout>
+<x-footer/>

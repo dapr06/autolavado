@@ -14,7 +14,7 @@
                                 <p class="card-text text-justify">{{ $service->description }}</p>
                                 <p>Precio: {{ $service->price}}€</p>
                                 <p>Duración aproximada: {{ $service->time}}min</p>
-                                <p>Botón edit admin: <a href='{{ route('services.edit', $service) }}'>X</a></p>
+                                <p class="text-center"><a href='{{ route('services.edit', $service) }}'><img src="/img/edit.png" width="20" height="20"></a></p>
                             </div>
                         </div>
                     </div>

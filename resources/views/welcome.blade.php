@@ -20,9 +20,9 @@
     </head>
 
     <body>
-        <x-menu></x-menu>
+        <x-menu/>
         <div class="container">
-            <h1 class="text-center">¡¡Bienvenido a Chapuzón!!</h1><br>
+            <br><h1 class="text-center">¡¡Bienvenido a Chapuzón!!</h1><br>
             <div class="row">
                 <div class="col-md-8">
                     <p class="text-justify">
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-md-4 text-justify">
                     <br>
-                    <p> En Chapuzón, nos apasiona el cuidado y la limpieza de vehículos. Nuestro lema refleja nuestra
+                    <p> Nuestro lema refleja nuestra
                         dedicación para lograr la perfección en cada servicio que brindamos. Nos esforzamos por superar
                         expectativas de nuestros clientes y cuidar de sus coches como si fueran nuestros propios vehículos.
                     </p><br>
@@ -104,54 +104,6 @@
                     <img src="/img/coche2.jpg" class="rounded" height="235">
                 </div>
             </div>
-<!------------------------------------------------------------------------------------------------------------>
-            <!--Politicas de empresa-->
-            <br><h3>Políticas de empresa.</h3><br>
-            <div class="row">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Calidad y satisfacción</h4>
-                                <p class="card-text text-justify">Nos comprometemos a brindar servicios de la más alta
-                                    calidad para garantizar la plena satisfacción de nuestros clientes. Nos esforzamos
-                                    por superar sus expectativas en cada interacción y mantener una comunicación abierta
-                                    para garantizar su satisfacción continua.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Responsabilidad medioambiental</h4>
-                                <p class="card-text text-justify">Somos conscientes de la importancia de proteger el medio ambiente.
-                                    Por ello, nos comprometemos a utilizar productos y prácticas de limpieza sostenibles,
-                                    minimizando nuestro impacto ambiental y promoviendo la conservación de los recursos
-                                    naturales.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Honestidad e integridad</h4>
-                                <p class="card-text text-justify">Valoramos la honestidad y la integridad en todas nuestras operaciones.
-                                    Mantenemos altos estándares éticos, tratamos a nuestros clientes y empleados con respeto
-                                    y transparencia, y nos esforzamos por construir relaciones basadas en la confianza mutua.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Privacidad y confidencialidad</h4>
-                                <p class="card-text text-justify">Respetamos la privacidad y confidencialidad de nuestros clientes.<br>
-                                    Nos comprometemos a proteger la información personal y los detalles del vehículo que
-                                    nos confían, utilizando medidas de seguridad adecuadas para salvaguardar su privacidad.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!------------------------------------------------------------------------------------------------------------>
             <br><p class="text-justify text-center">
                 En Chapuzón, nos apasiona el cuidado de los vehículos y nos enorgullece brindar un servicio excepcional a nuestros
                 clientes. <br>¡Confía en nosotros para mantener tu automóvil en las mejores condiciones!

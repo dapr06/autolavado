@@ -27,7 +27,7 @@
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-gray-800">
-                        <button form="send-verification" id="botoneditarp"></button>
+                        <button form="send-verification" ></button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')

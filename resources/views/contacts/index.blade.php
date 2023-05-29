@@ -29,6 +29,7 @@
             </div>
             {{--Mapa--}}
             <div class="col-md-8">
+                <br>
                 <div class="mapa">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.486168156319!2d-3.7039360235453307!3d40.30936656216627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4221185bb0a9eb%3A0x535efb200ec44afe!2sPetroprix!5e0!3m2!1ses!2ses!4v1685027014146!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -37,7 +38,7 @@
         </div>
                 <!--Politicas de empresa-->
         <p></p>
-                <br><h3>Políticas de empresa.</h3><br>
+                <br><h3>Nuestras políticas de empresa.</h3><br>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card">

@@ -26,17 +26,16 @@ class ServiceController extends Controller
     {
         {
             $this->validate($request, [
-                'worker_id' => 'required',
                 'name' => 'required',
                 'description' => 'required',
+                'time' => 'required',
                 'price' => 'required',
-
             ]);
 
             $service = new Service();
-            $service->worker_id = $request->worker_id;
             $service->name = $request->name;
             $service->description = $request->description;
+            $service->time = $request->time;
             $service->price = $request->price;
             $service->save();
             return redirect()->route('services.index');
@@ -59,15 +58,15 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $this->validate($request, [
-            'worker_id' => 'required',
             'name' => 'required',
             'description' => 'required',
+            'time' => 'required',
             'price' => 'required',
         ]);
 
-        $service->worker_id = $request->worker_id;
         $service->name = $request->name;
         $service->description = $request->description;
+        $service->time = $request->time;
         $service->price = $request->price;
         $service->save();
 

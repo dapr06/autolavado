@@ -109,6 +109,6 @@
                 clientes. <br>¡Confía en nosotros para mantener tu automóvil en las mejores condiciones!
             </p>
         </div>
-        <x-footer></x-footer>
+        <x-footer/>
     </body>
 </html>

@@ -7,7 +7,15 @@
 body{
     display: flex;
     flex-direction: column;
-
+    background: #cce3fa;
+}
+table, tr, th, td{
+    border: black 2px solid;
+    background: white;
+    text-align: center;
+}
+table {
+    width: 100%;
 }
 .menu{
     background: dodgerblue;
@@ -65,8 +73,7 @@ body{
 }
 
 form {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin: 10px;
 }
 
 label {

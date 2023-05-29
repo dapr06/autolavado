@@ -1,13 +1,18 @@
 <x-menu/>
-    <h2>Crear cliente</h2>
+<div class="container">
+    <br><h1 class="text-center">Registrar un nuevo cliente</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form action='{{ route('clients.store') }}' method='post'>
+                @method('post')
+                @csrf
 
-    <form action='{{ route('clients.store') }}' method='post'>
-        @method('post')
-        @csrf
+                <x-clients-campos/>
+                <button>Registrar cliente</button>
+                <a href='{{ route('clients.index') }}'>Volver al listado de clientes</a>
 
-        <x-clients-campos/>
-
-        <br><br>
-        <input class='button' type='submit' name='crear' value='Registrar cliente' />
-    </form><br/>
+            </form>
+        </div>
+    </div>
+</div>
 <x-footer/>

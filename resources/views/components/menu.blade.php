@@ -5,9 +5,10 @@
     <a class="menua" href="{{ url('/services') }}">Servicios</a>
     <a class="menua" href="{{ url('/contacts') }}">Contacto</a>
     <a class="menua" href="{{ url('/clients') }}">Clientes</a>
-    <a class="menua" href="{{ url('/vehicles') }}">Vehiculo</a>
-    <a class="menua" href="{{ url('/workers') }}">Trabajador</a>
-    <a class="menua" href="{{ url('/bookings') }}">Reserva/Carrito</a>
+    <a class="menua" href="{{ url('/vehicles') }}">Vehículos</a>
+    <a class="menua" href="{{ url('/workers') }}">Trabajadores</a>
+    <a class="menua" href="{{ url('/bookings') }}">Reservas</a>
+    <a class="menua" href="{{ url('#') }}"><img src="/img/carrito.png" width="30" height="30"></a>
 
     @if (Route::has('login'))
             @auth

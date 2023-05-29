@@ -1,17 +1,20 @@
 <x-menu/>
-    <h1>Listado de vehículos</h1>
+<div class="container">
+    <br><h1 class="text-center">Esta viendo el vehículo: {{$vehicle->number_plate}}</h1><br>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Matrícula: {{$vehicle->number_plate}}</p>
+            <p>Interior: {{$vehicle->interior_type}}</p>
+            <p>Color: {{$vehicle->color}}</p>
 
-    <p>Matrícula: {{$vehicle->number_plate}}</p>
-    <p>Interior: {{$vehicle->interior_type}}</p>
-    <p>Color: {{$vehicle->color}}</p>
+            <button><a href='{{ route('vehicles.edit', $vehicle) }}'>Editar vehículo</a></button>
 
-    <a href='{{ route('vehicles.edit', $vehicle) }}'>Editar vehículo</a>
-
-    <br/><br/>
-
-    <form id='{{ $vehicle->id }}' action='{{ route('vehicles.destroy', $vehicle) }}' method='post'>
-        @method('delete')
-        <input class='button' type='submit' name='crear' value='Eliminar Vehículo'/>
-    </form><br>
-    <a href='{{ route('vehicles.index') }}'>Volver al listado de vehículos.</a>
+            <form id='{{ $vehicle->id }}' action='{{ route('vehicles.destroy', $vehicle) }}' method='post'>
+                @method('delete')
+                <button>Eliminar vehículo</button>
+            </form>
+            <a href='{{ route('vehicles.index') }}'>Volver al listado de vehículos.</a>
+        </div>
+    </div>
+</div>
 <x-footer/>

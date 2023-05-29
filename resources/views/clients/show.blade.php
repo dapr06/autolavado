@@ -1,20 +1,22 @@
 <x-menu/>
-    <h1>Listado de clientes</h1>
+<div class="container">
+    <br><h1 class="text-center">Esta viendo al cliente: {{$client->name}} {{$client->surname}}</h1><br>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Id_vehiculo: {{$client->vehicle_id}}</p>
+            <p>Nombre: {{$client->name}}</p>
+            <p>Apellido: {{$client->surname}}</p>
+            <p>Telefono: {{$client->phone}}</p>
+            <p>Correo: {{$client->email}}</p>
 
-    <p>Id_vehiculo: {{$client->vehicle_id}}</p>
-    <p>Nombre: {{$client->name}}</p>
-    <p>Apellido: {{$client->surname}}</p>
-    <p>Telefono: {{$client->phone}}</p>
-    <p>Correo: {{$client->email}}</p>
+            <button><a href='{{ route('clients.edit', $client) }}'>Editar cliente</a></button>
 
-    <a href='{{ route('clients.edit', $client) }}'>Editar cliente</a>
-    <br/><br/>
-
-    <form id='{{ $client->id }}' action='{{ route('clients.destroy', $client) }}' method='post'>
-        @method('delete')
-        <input class='button' type='submit' name='crear' value='Eliminar cliente'/>
-    </form><br>
-
-    <a href='{{ route('clients.index') }}'>Volver al listado de cliente.</a>
+            <form id='{{ $client->id }}' action='{{ route('clients.destroy', $client) }}' method='post'>
+                @method('delete')
+                <button>Eliminar cliente</button>
+            </form>
+            <a href='{{ route('clients.index') }}'>Volver al listado de cliente.</a>
+        </div>
+    </div>
+</div>
 <x-footer/>
-

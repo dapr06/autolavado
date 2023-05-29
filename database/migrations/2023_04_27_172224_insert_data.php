@@ -52,31 +52,43 @@ return new class extends Migration
 
         DB::table('services')->insert([
             [
-                'name' =>'Lavado exterior',
+                'name' =>'Lavado interior estándar',
+                'description' => 'Lavado interior del vehículo.',
+                'time' => '20',
+                'price' => '15',
+            ],
+            [
+                'name' =>'Lavado interior premium',
+                'description' => 'Lavado interior del vehículo.',
+                'time' => '30',
+                'price' => '20',
+            ],
+            [
+                'name' =>'Lavado exterior estándar',
+                'description' => 'Lavado exterior del vehículo.',
+                'time' => '10',
+                'price' => '10',
+            ],
+            [
+                'name' =>'Lavado exterior premium',
                 'description' => 'Lavado exterior del vehículo.',
                 'time' => '20',
                 'price' => '15',
             ],
             [
-                'name' =>'Lavado exterior premium',
-                'description' => 'Incluye lavado a presión, eliminación de suciedad incrustada, limpieza de llantas y abrillantado de neumáticos.',
-                'time' => '30',
-                'price' => '22',
+                'name' =>'Limpieza de techo interior y paneles',
+                'description' => 'Elimina manchas y suciedad de los paneles de techo y otros revestimientos interiores.',
+                'time' => '50',
+                'price' => '45',
             ],
             [
-                'name' =>'Lavado exterior e interior estándar',
-                'description' => 'Incluye lavado exterior básico y limpieza de alfombras, asientos y salpicadero.',
-                'time' => '55',
-                'price' => '35',
+                'name' =>'Limpieza y acondicionamiento de cuero',
+                'description' => 'Limpia y nutre los asientos y revestimientos de cuero, dejándolos suaves y protegidos.',
+                'time' => '90',
+                'price' => '60',
             ],
             [
-                'name' =>'Lavado exterior e interior premium',
-                'description' => 'Incluye lavado exterior premium y limpieza a fondo de tapicería, paneles de puertas, consola central y ventanas.',
-                'time' => '70',
-                'price' => '50',
-            ],
-            [
-                'name' =>'Servicio de encerado',
+                'name' =>'Encerado',
                 'description' => 'Aplicación de cera protectora en la carrocería.',
                 'time' => '50',
                 'price' => '30',
@@ -92,18 +104,6 @@ return new class extends Migration
                 'description' => 'Elimina el desgaste y la opacidad de los faros, mejorando la visibilidad y la apariencia del vehículo.',
                 'time' => '60',
                 'price' => '70',
-            ],
-            [
-                'name' =>'Limpieza y acondicionamiento de cuero',
-                'description' => 'Limpia y nutre los asientos y revestimientos de cuero, dejándolos suaves y protegidos.',
-                'time' => '90',
-                'price' => '60',
-            ],
-            [
-                'name' =>'Limpieza de techo interior y paneles',
-                'description' => 'Elimina manchas y suciedad de los paneles de techo y otros revestimientos interiores.',
-                'time' => '50',
-                'price' => '45',
             ],
             [
                 'name' =>'Detallado completo',

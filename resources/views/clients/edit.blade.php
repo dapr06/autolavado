@@ -5,8 +5,8 @@
         <div class="col-md-12">
             <form action='{{route('clients.update',$client)}}' method='post'>
                 @method('put')
-                <label for='vehicle_id'> Id_vehicle </label>
-                <input type='text' id='vehicle_id' name='vehicle_id' value='{{ $client->vehicle_id }}'/>
+                <label for='vehicle_id' hidden> Id_vehicle </label>
+                <input type='text' id='vehicle_id' name='vehicle_id' value='{{ $client->vehicle_id }}' hidden/>
                 <br>
                 <label for='name'>Nombre</label>
                 <input type='text' id='name' name='name' value='{{ $client->name }}'/>

@@ -40,7 +40,7 @@
                         adicionales como pulido, encerado y limpieza de tapicería.</p><br>
                 </div>
                 <div class="col-md-4">
-                    <img src="/img/coche3.jpg" class="rounded" height="235">
+                    <img src="/img/coche3.jpg" class="rounded" width="100%">
                 </div>
             </div>
  <!------------------------------------------------------------------------------------------------------------>

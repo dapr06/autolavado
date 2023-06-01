@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="/img/chapuzonLogo.png" class="iconSize" alt="Logo">
+        <img src="/img/chapuzonLogo.png" width="120" height="40" alt="Logo">
     </a>
     <div class="navbar-collapse">
         <ul class="navbar-nav ml-auto">

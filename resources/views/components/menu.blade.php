@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="/img/chapuzonLogo.png" width="120" height="40" alt="Logo">
+        <img src="/img/chapuzonLogo.png" class="iconSize" alt="Logo">
     </a>
     <div class="navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('#') }}">
-                    <img src="/img/carrito.png" width="30" height="30" alt="Carrito">
+                    <img src="/img/carrito.png" class="iconSize" alt="Carrito">
                 </a>
             </li>
             @if (Route::has('login'))
@@ -43,14 +43,14 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="btn nav-link logout-button">
-                                <img src="/img/logout.png" class="logout" alt="Logout">
+                                <img src="/img/logout.png" class="iconSize" alt="Logout">
                             </button>
                         </form>
                     </li>
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
-                            <img src="/img/acceso.png" class="inicios" alt="Acceso">
+                            <img src="/img/acceso.png" class="iconSize" alt="Acceso">
                         </a>
                     </li>
                 @endauth

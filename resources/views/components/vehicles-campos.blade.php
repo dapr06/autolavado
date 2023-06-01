@@ -1,3 +1,6 @@
+<label for='client_id'>  Id cliente </label>
+<input type='text' id='client_id' name='client_id' value='{{ $vehicle->client_id ?? '' }}' />
+<br>
 <label for='number_plate'>  Matrícula </label>
 <input type='text' id='number_plate' name='number_plate' value='{{ $vehicle->number_plate ?? '' }}' />
 <br>

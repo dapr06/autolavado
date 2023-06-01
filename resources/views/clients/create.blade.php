@@ -10,8 +10,7 @@
                 <x-clients-campos/>
                 <button>Registrar cliente</button>
                 <a href='{{ route('clients.index') }}'>Volver al listado de clientes</a>
-
-            </form>
+            </form><br/>
         </div>
     </div>
 </div>

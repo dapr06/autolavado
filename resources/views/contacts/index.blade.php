@@ -9,16 +9,16 @@
                     <h2>¿Necesitas ayuda?</h2>
                     <form action="https://formsubmit.co/c0d833133b9e0f549c6e219ee17ce5f1 " method="POST" >
                         <label for="Nombre"> Nombre: </label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" placeholder="Daniela Turón">
 
-                        <label for="email"> Correo Electronico: </label>
-                        <input type="email" name="email">
+                        <label for="email"> Correo electrónico: </label>
+                        <input type="email" name="email" placeholder="tucorreo@gmail.com">
 
                         <label for="subject"> Asunto: </label>
-                        <input type="text" name="subject">
+                        <input type="text" name="subject" placeholder="Consulta">
 
-                        <label for="comments"> Comentarios: </label>
-                        <textarea name="comments" cols="15" rows="5"></textarea>
+                        <label for="comments"> Comentario: </label>
+                        <textarea name="comments" cols="15" rows="5" placeholder="Aquí puedo poner un comentario..."></textarea>
 
                         <input type="submit" value="Enviar">
 

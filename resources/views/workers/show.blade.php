@@ -1,23 +1,29 @@
 <x-menu/>
-    <h1>Listado de trabajadores</h1>
+<div class="container">
+    <br><h1 class="text-center">Trabajador {{$worker->name}} {{$worker->surname}}</h1><br>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form id='{{ $worker->id }}' action='{{ route('workers.destroy', $worker) }}' method='post'>
+                        <p>Nombre: {{$worker->name}}</p>
+                        <p>Apellido: {{$worker->surname}}</p>
+                        <p>DNI: {{$worker->DNI}}</p>
+                        <p>Correo electrónico: {{$worker->email}}</p>
+                        <p>Rol: {{$worker->role}}</p>
+                        <p>Turno: {{$worker->turn}}</p>
+                        <p>Disponibilidad: {{$worker->availability}}</p>
 
-    <p>Name: {{$worker->name}}</p>
-    <p>Surname: {{$worker->surname}}</p>
-    <p>DNI: {{$worker->dni}}</p>
-    <p>Email: {{$worker->email}}</p>
-    <p>Role: {{$worker->role}}</p>
-    <p>Turn: {{$worker->turn}}</p>
-    <p>Availability: {{$worker->availability}}</p>
+                        <button><a href='{{ route('workers.edit', $worker) }}'>Editar</a></button>
 
-    <a href='{{ route('workers.edit', $worker) }}'>Editar trabajador</a>
-    <br/><br/>
+                        @method('delete')
+                        <button>Eliminar</button>
 
-    <form id='{{ $worker->id }}' action='{{ route('workers.destroy', $worker) }}' method='post'>
-        @method('delete')
-
-        <input class='button' type='submit' name='crear' value='Eliminar trabajador'/>
-    </form>
-    <br>
-
-    <a href='{{ route('workers.index') }}'>Volver al listado de trabajadores.</a>
+                        <br><a href='{{ route('workers.index') }}'>Volver al listado de trabajadores.</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <x-footer/>

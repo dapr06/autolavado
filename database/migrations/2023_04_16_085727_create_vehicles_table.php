@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Client;
+
 
 return new class extends Migration
 {
@@ -13,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Client::class)
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->char('number_plate',10);
             $table->string('interior_type', 20);
             $table->string('color',10);

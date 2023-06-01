@@ -23,12 +23,14 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'client_id' => 'required',
             'number_plate' => 'required',
             'interior_type' => 'required',
             'color' => 'required',
         ]);
 
         $vehicle = new Vehicle();
+        $vehicle->client_id = $request->client_id;
         $vehicle->number_plate = $request->number_plate;
         $vehicle->interior_type = $request->interior_type;
         $vehicle->color = $request->color;
@@ -50,11 +52,13 @@ class VehicleController extends Controller
     public function update(Request $request, Vehicle $vehicle)
     {
         $this->validate($request, [
+            'client_id' => 'required',
             'number_plate' => 'required',
             'interior_type' => 'required',
             'color' => 'required',
         ]);
 
+        $vehicle->client_id = $request->client_id;
         $vehicle->number_plate = $request->number_plate;
         $vehicle->interior_type = $request->interior_type;
         $vehicle->color = $request->color;

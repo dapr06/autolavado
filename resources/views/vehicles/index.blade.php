@@ -5,6 +5,7 @@
         <div class="col-md-12">
             <table>
                 <tr>
+                    <th>Id cliente</th>
                     <th>Matrícula</th>
                     <th>Interior</th>
                     <th>Color</th>
@@ -13,14 +14,11 @@
 
                 @foreach ($vehicles as $vehicle)
                     <tr>
+                        <td><a href='{{ route('vehicles.show', $vehicle->client_id) }}'>{{ $vehicle->client->name }}</a></td>
                         <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->number_plate }}</a></td>
                         <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->interior_type}}</a></td>
                         <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->color }}</a></td>
                         <td>
-{{--
-                            <button><a href='{{ route('vehicles.show', $vehicle) }}'><img src="/img/edit.png" width="30" height="30"></a></button><br><br>
---}}
-
                             <form action='{{ route('vehicles.destroy', $vehicle) }}' method='post'>
                                 @method('delete')
                                 @csrf
@@ -35,5 +33,3 @@
     </div>
 </div>
 <x-footer/>
-
-

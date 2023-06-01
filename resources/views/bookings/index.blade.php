@@ -1,6 +1,6 @@
 <x-menu/>
 <div class="container">
-    <br><h1 class="text-center">Añadir Reserva</h1><br>
+    <br><h1 class="text-center"> Reservas registradas</h1><br>
     <div class="row">
         <div class="col-md-12">
             <table>
@@ -22,14 +22,12 @@
                             <form action='{{ route('bookings.destroy', $booking) }}' method='post'>
                                 @method('delete')
                                 @csrf
-
-                                <input class='button' type='submit' name='eliminar' value='X'/>
+                                <button>X</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
-            </table><br><br>
-
+            </table><br>
             <button><a href='{{ route('bookings.create') }}'>Registrar reserva</a></button><br><br>
         </div>
     </div>

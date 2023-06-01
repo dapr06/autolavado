@@ -22,7 +22,6 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'vehicle_id' => 'required',
             'name' => 'required',
             'surname' => 'required',
             'phone' => 'required',
@@ -30,7 +29,6 @@ class ClientController extends Controller
         ]);
 
         $client = new Client();
-        $client->vehicle_id = $request->vehicle_id;
         $client->name = $request->name;
         $client->surname = $request->surname;
         $client->phone = $request->phone;
@@ -52,14 +50,12 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         $this->validate($request, [
-            'vehicle_id' => 'required',
             'name' => 'required',
             'surname' => 'required',
             'phone' => 'required',
             'email' => 'required',
         ]);
 
-        $client->vehicle_id = $request->vehicle_id;
         $client->name = $request->name;
         $client->surname = $request->surname;
         $client->phone = $request->phone;

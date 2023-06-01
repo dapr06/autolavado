@@ -10,43 +10,108 @@ return new class extends Migration
     public function up(): void
     {
         DB::table('users')->insert([
-
-                'name' => 'administrador',
-                'email' =>'admi@admi.com',
-               'password' => bcrypt('123456789'),
-
+            'name' => 'administrador',
+            'email' =>'admi@admi.com',
+            'password' => bcrypt('123456789'),
         ]);
 
         DB::table('workers')->insert([
             [
-            'name' => 'root',
-            'surname' =>'root',
-            'DNI' => '5555555A',
-            'email' => 'root@root.com',
-            'role' => 'ADMIN',
-            'turn' => '1',
-            'availability' => '1'],
+                'name' => 'root',
+                'surname' =>'root',
+                'DNI' => '5555555A',
+                'email' => 'root@root.com',
+                'role' => 'ADMIN',
+                'turn' => '1',
+                'availability' => '1'
+            ],
             [
-            'name' => 'a',
-            'surname' =>'a',
-            'DNI' => '5555555B',
-            'email' => 'p@prueba.com',
-            'role' => 'TRA',
-            'turn' => '0',
-            'availability' => '1'
-                ]
+                'name' => 'Afro',
+                'surname' =>'De Carvalho',
+                'DNI' => '1245789Z',
+                'email' => 'afro@gmail.com',
+                'role' => 'TRA',
+                'turn' => '0',
+                'availability' => '1'
+            ],
+            [
+                'name' => 'Cristina',
+                'surname' =>'Turón',
+                'DNI' => '14700254C',
+                'email' => 'cristina@gmail.com',
+                'role' => 'TRA',
+                'turn' => '0',
+                'availability' => '1'
+            ],
+            [
+                'name' => 'Daniela',
+                'surname' =>'Prato',
+                'DNI' => '47521368A',
+                'email' => 'daniela@gmail.com',
+                'role' => 'TRA',
+                'turn' => '0',
+                'availability' => '1'
+            ],
+            [
+                'name' => 'Jorge',
+                'surname' =>'Martinez',
+                'DNI' => '75842366S',
+                'email' => 'jorge@gmail.com',
+                'role' => 'TRA',
+                'turn' => '0',
+                'availability' => '1'
+            ]
         ]);
-
+        DB::table('clients')->insert([
+            [
+                'name' =>'Cristina',
+                'surname' => 'Turón',
+                'phone' => '654987321',
+                'email' => 'cristina@gmail.com',
+            ],
+            [
+                'name' =>'Daniela',
+                'surname' => 'Prato',
+                'phone' => '654217895',
+                'email' => 'daniela@gmail.com',
+            ],
+            [
+                'name' =>'Maria',
+                'surname' => 'Pérez',
+                'phone' => '624851379',
+                'email' => 'maria@gmail.com',
+            ]
+        ]);
         DB::table('vehicles')->insert([
             [
-                'number_plate' => '123aaa',
+                'client_id' => '1',
+                'number_plate' => '4978ldj',
                 'interior_type' =>'cuero',
                 'color' => 'rojo',
-                ],
+            ],
             [
-                'number_plate' => '321bbb',
-                'interior_type' =>'sintetico',
+                'client_id' => '1',
+                'number_plate' => '4758hfr',
+                'interior_type' =>'sintético',
                 'color' => 'amarillo',
+            ],
+            [
+                'client_id' => '2',
+                'number_plate' => '1785htr',
+                'interior_type' =>'sintético',
+                'color' => 'negro',
+            ],
+            [
+                'client_id' => '2',
+                'number_plate' => '1425mdl',
+                'interior_type' =>'cuero',
+                'color' => 'gris',
+            ],
+            [
+                'client_id' => '2',
+                'number_plate' => '1247',
+                'interior_type' =>'tela',
+                'color' => 'azul',
             ]
         ]);
 
@@ -112,22 +177,7 @@ return new class extends Migration
                 'price' => '120',
             ]
         ]);
-        DB::table('clients')->insert([
-            [
-                'vehicle_id' => '1',
-                'name' =>'pepe',
-                'surname' => 'pepe',
-                'phone' => '666666666',
-                'email' => 'cliente@cliente.com',
-            ],
-            [
-                'vehicle_id' => '2',
-                'name' =>'maria',
-                'surname' => 'pepe',
-                'phone' => '666666667',
-                'email' => 'cliente1@cliente.com',
-            ]
-        ]);
+
         DB::table('bookings')->insert([
             [
                 'service_id' => '1',

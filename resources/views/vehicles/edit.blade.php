@@ -6,7 +6,7 @@
             <form action='{{route('vehicles.update',$vehicle)}}' method='post'>
                 @method('put')
                 <label for='number_plate'>Matrícula </label>
-                <input type='text' id='number_plate' name='number_plate' value='{{ $vehicle->number_plate}}' />
+                <input type='text' id='number_plate' name='number_plate' value='{{ $vehicle->number_plate}}'/>
                 <br>
                 <label for='interior_type'>Interior </label>
                 <input type='text' id='interior_type' name='interior_type' value='{{ $vehicle->interior_type}}' />
@@ -14,7 +14,7 @@
                 <label for='color'>Color </label>
                 <input type='text' id='color' name='color' value='{{ $vehicle->color}}' />
                 <br><br>
-                <button>Actualizar vehículo</button>
+                <button>Actualizar</button>
                 <a href='{{ route('vehicles.index') }}'>Volver al listado de vehículos</a>
             </form>
         </div>

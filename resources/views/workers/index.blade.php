@@ -1,17 +1,17 @@
 <x-menu/>
 <div class="container">
-    <br><h1 class="text-center">Añadir Trabajador</h1><br>
+    <br><h1 class="text-center">Trabajadores registrados</h1><br>
     <div class="row">
         <div class="col-md-12">
             <table>
                 <tr>
-                    <th>Name</th>
-                    <th>Surname</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
                     <th>DNI</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Turn</th>
-                    <th>Availability</th>
+                    <th>Correo electrónico</th>
+                    <th>Rol</th>
+                    <th>Turno</th>
+                    <th>Disponibilidad</th>
                     <th>Eliminar</th>
                 </tr>
 
@@ -28,14 +28,12 @@
                             <form action='{{ route('workers.destroy', $worker) }}' method='post'>
                                 @method('delete')
                                 @csrf
-
-                                <input class='button' type='submit' name='eliminar' value='X' />
+                                <button>X</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
-            </table><br><br>
-
+            </table><br>
             <button><a href='{{ route('workers.create') }}'>Registrar trabajador</a></button><br><br>
         </div>
     </div>

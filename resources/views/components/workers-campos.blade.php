@@ -13,7 +13,7 @@
 <label for='role'>  Rol </label>
 <input type='text' id='role' name='role' value='{{ $worker->role ?? '' }}' />
 <br>
-<label for="turn">Turno</label>
+<label for="turn">Turno:</label>
 <select name="turn" id="turn">
     <option value="0">Mañana</option>
     <option value="1">Tarde</option>
@@ -24,4 +24,4 @@
     <option value="0">Libre</option>
     <option value="1">Ocupado</option>
 </select>
-
+<br><br>

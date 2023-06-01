@@ -28,12 +28,12 @@ tr, th, td{
     color: white;
     justify-content: space-between;
     align-items: center;
-    color: inherit;
+
 }
 
 .nav-link{
     align-items: center;
-    margin-right: 70px;
+    margin-right: 50px;
 }
 
 .navbar-nav .nav-link {

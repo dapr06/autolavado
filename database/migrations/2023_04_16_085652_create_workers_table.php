@@ -19,7 +19,6 @@ return new class extends Migration
             $table->char('email', 70);
             $table->string('role', 15);
             $table->boolean('turn');
-            $table->boolean('availability');
             $table->timestamps();
         });
     }

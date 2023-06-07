@@ -8,9 +8,10 @@
                 @csrf
 
                 <x-bookings-campos/>
-                <button>Registrar reserva</button>
-                <a href='{{ route('bookings.index') }}'>Volver al listado de reservas</a>
-            </form><br/>
+
+                <button class="btn btn-danger text-white">Registrar reserva</button>
+                <button class="btn btn-info text-white"><a href="{{ route('bookings.index') }}" class="text-white">Volver</a></button><br><br>
+            </form>
         </div>
     </div>
 </div>

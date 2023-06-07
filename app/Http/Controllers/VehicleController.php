@@ -40,7 +40,6 @@ class VehicleController extends Controller
 
     public function show(Vehicle $vehicle)
     {
-        $vehicles = Vehicle::orderBy('number_plate')->get();
         return view('vehicles/show', compact('vehicle'));
     }
 

@@ -23,9 +23,9 @@
                 <label for='total_price'> Precio total </label>
                 <input type='text' id='total_price' name='total_price' value='{{ $booking->total_price }}'/>
                 <br><br>
+                <button class="btn btn-danger">Actualizar</button>
 
-                <button>Actualizar</button>
-                <a href='{{ route('bookings.index') }}'>Volver al listado de reservas</a>
+                <button class="btn btn-info text-white"><a href="{{ route('bookings.index') }}" class="text-white">Volver</a></button>
             </form>
         </div>
     </div>

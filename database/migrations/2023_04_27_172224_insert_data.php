@@ -82,6 +82,22 @@ return new class extends Migration
                 'email' => 'maria@gmail.com',
             ]
         ]);
+
+        DB::table('categories')->insert([
+            [
+                'category' => 'interior',
+            ],
+            [
+                'category' => 'exterior',
+            ],
+            [
+                'category' => 'otros',
+            ],
+            [
+                'category' => 'pack',
+            ]
+        ]);
+
         DB::table('vehicles')->insert([
             [
                 'client_id' => '1',
@@ -117,60 +133,70 @@ return new class extends Migration
 
         DB::table('services')->insert([
             [
+                'category_id' => '1',
                 'name' =>'Lavado interior estándar',
                 'description' => 'Lavado interior del vehículo.',
                 'time' => '20',
                 'price' => '15',
             ],
             [
+                'category_id' => '1',
                 'name' =>'Lavado interior premium',
                 'description' => 'Lavado interior del vehículo.',
                 'time' => '30',
                 'price' => '20',
             ],
             [
+                'category_id' => '2',
                 'name' =>'Lavado exterior estándar',
                 'description' => 'Lavado exterior del vehículo.',
                 'time' => '10',
                 'price' => '10',
             ],
             [
+                'category_id' => '2',
                 'name' =>'Lavado exterior premium',
                 'description' => 'Lavado exterior del vehículo.',
                 'time' => '20',
                 'price' => '15',
             ],
             [
+                'category_id' => '1',
                 'name' =>'Limpieza de techo interior y paneles',
                 'description' => 'Elimina manchas y suciedad de los paneles de techo y otros revestimientos interiores.',
                 'time' => '50',
                 'price' => '45',
             ],
             [
+                'category_id' => '1',
                 'name' =>'Limpieza y acondicionamiento de cuero',
                 'description' => 'Limpia y nutre los asientos y revestimientos de cuero, dejándolos suaves y protegidos.',
                 'time' => '90',
                 'price' => '60',
             ],
             [
+                'category_id' => '2',
                 'name' =>'Encerado',
                 'description' => 'Aplicación de cera protectora en la carrocería.',
                 'time' => '50',
                 'price' => '30',
             ],
             [
+                'category_id' => '2',
                 'name' =>'Pulido y abrillantado de carrocería',
                 'description' => 'Elimina arañazos y marcas superficiales, dejando la carrocería con un brillo intenso.',
                 'time' => '120',
                 'price' => '150',
             ],
             [
+                'category_id' => '3',
                 'name' =>'Restauración de faros delanteros',
                 'description' => 'Elimina el desgaste y la opacidad de los faros, mejorando la visibilidad y la apariencia del vehículo.',
                 'time' => '60',
                 'price' => '70',
             ],
             [
+                'category_id' => '4',
                 'name' =>'Detallado completo',
                 'description' => 'Incluye lavado exterior premium, limpieza exhaustiva del interior, pulido de carrocería, encerado y limpieza de motor.',
                 'time' => '180',

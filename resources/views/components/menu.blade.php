@@ -16,6 +16,9 @@
                 <a class="nav-link" style="color: white" href="{{ url('/contacts') }}">Contacto</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
             </li>
             <li class="nav-item">

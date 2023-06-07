@@ -16,7 +16,6 @@
                 <tbody>
                     @foreach ($clients as $client)
                         <tr>
-    {{--<td><a href='{{ route('clients.show', $client->vehicle_id) }}'>{{ $client->vehicle_id->number_plate}}</a></td>--}}
                             <td><a href='{{ route('clients.show', $client) }}'>{{ $client->name }}</a></td>
                             <td><a href='{{ route('clients.show', $client) }}'>{{ $client->surname}}</a></td>
                             <td><a href='{{ route('clients.show', $client) }}'>{{ $client->phone }}</a></td>
@@ -32,7 +31,7 @@
                     @endforeach
                 </tbody>
             </table><br>
-            <button class="btn btn-primary text-white"><a href="{{ route('clients.create') }}" class="text-white">Nuevo cliente</a></button><br><br>
+            <button class="btn btn-primary text-white"><a href="{{ route('clients.create') }}" class="text-white">Registrar cliente</a></button><br><br>
         </div>
     </div>
 </div>

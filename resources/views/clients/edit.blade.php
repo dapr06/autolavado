@@ -5,8 +5,6 @@
         <div class="col-md-12">
             <form action='{{route('clients.update',$client)}}' method='post'>
                 @method('put')
-                <label for='vehicle_id' hidden> Id_vehicle </label>
-                <input type='text' id='vehicle_id' name='vehicle_id' value='{{ $client->vehicle_id }}' hidden/>
                 <label for='name'>Nombre</label>
                 <input type='text' id='name' name='name' value='{{ $client->name }}'/>
                 <br>
@@ -19,9 +17,9 @@
                 <label for='email'>Correo electrónico</label>
                 <input type='text' id='email' name='email' value='{{ $client->email }}'/>
                 <br><br>
+                <button class="btn btn-danger">Actualizar</button>
 
-                <button>Actualizar</button>
-                <a href='{{ route('clients.index') }}'>Ir al listado de clientes</a>
+                <button class="btn btn-info text-white"><a href="{{ route('clients.index') }}" class="text-white">Volver</a></button>
             </form>
         </div>
     </div>

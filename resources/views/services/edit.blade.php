@@ -1,23 +1,30 @@
 <x-menu/>
-    <h1> Edita servicio {{$service->name}}</h1>
-    <br>
-    <form action='{{route('services.update',$service)}}' method='post'>
-        @method('put')
+<div class="container">
+    <br><h1 class="text-center">Esta editando el servicio: {{$service->name}} </h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form action='{{route('services.update', $service)}}' method='post'>
+                @method('put')
+                <label for='category_id'> Categoría </label>
+                <input type='text' id='category_id' name='category_id' value='{{ $service->category->category }}'/>
+                <br>
+                <label for='name'>Nombre </label>
+                <input id='name' name='name' type='text' value='{{ $service->name }}'>
+                <br>
+                <label for='description'>Descripción </label>
+                <input id='description' name='description' type='text' value='{{ $service->description }}'>
+                <br>
+                <label for='time'>Duración </label>
+                <input id="time" name='time' type='text' value='{{$service->time}}'>
+                <br>
+                <label for='price'>Precio </label>
+                <input id='price' name='price' type='text' value='{{ $service->price }}'>
+                <br><br>
+                <button class="btn btn-danger">Actualizar</button>
 
-        <label for='name'>Name </label>
-        <input id='name' name='name' type='text' value='{{ $service->name }}'>
-        <br><br>
-        <label for='description'>Description </label>
-        <input id='description' name='description' type='text' value='{{ $service->description }}'>
-        <br><br>
-        <label for='time'>Time </label>
-        <input id="time" name='time' type='text' value='{{$service->time}}'>
-        <br><br>
-        <label for='price'>Price </label>
-        <input id='price' name='price' type='text' value='{{ $service->price }}'>
-        <br><br>
-        <input class='button' type='submit' name='actualizar' value='Actualizar'/>
-    </form>
-
-    <a href='{{ route('services.index') }}'>Ir al listado de servicios</a>
+                <button class="btn btn-info text-white"><a href="{{ route('services.index') }}" class="text-white">Volver</a></button>
+            </form>
+        </div>
+    </div>
+</div>
 <x-footer/>

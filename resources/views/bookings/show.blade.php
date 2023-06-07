@@ -14,12 +14,11 @@
                         <p>Número de servicios: {{$booking->number_services}}</p>
                         <p>Precio total: {{$booking->total_price}}</p>
 
-                        <button><a href='{{ route('bookings.edit', $booking) }}'>Editar</a></button>
+                        <button class="btn btn-primary text-white"><a href="{{ route('bookings.edit', $booking) }}" class="text-white">Editar</a></button>
+                        <button class="btn btn-info text-white"><a href="{{ route('bookings.index') }}" class="text-white">Volver</a></button>
 
                         @method('delete')
-                        <button>Eliminar</button>
-
-                        <br><a href='{{ route('bookings.index') }}'>Volver al listado de reservas.</a>
+                        <button class="btn btn-danger">Eliminar</button>
                     </form>
                 </div>
             </div>

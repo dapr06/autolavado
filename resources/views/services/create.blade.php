@@ -8,9 +8,8 @@
                 @csrf
 
                 <x-services-campos/>
-
-                <br><br>
-                <input class='button' type='submit' name='crear' value='Crear servicio' />
+                <button class="btn btn-danger text-white">Registrar servicio</button>
+                <button class="btn btn-info text-white"><a href="{{ route('services.index') }}" class="text-white">Volver</a></button><br><br>
             </form><br/>
         </div>
     </div>

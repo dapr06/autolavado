@@ -1,6 +1,6 @@
 <x-menu/>
 <div class="container">
-    <br><h1 class="text-center">Esta editando a {{$worker->name}} {{$worker->surname}}</h1>
+    <br><h1 class="text-center">Esta editando al trabajador {{$worker->name}} {{$worker->surname}}</h1>
     <div class="row">
         <div class="col-md-12">
             <form action='{{route('workers.update',$worker)}}' method='post'>
@@ -32,9 +32,9 @@
                     <option value='1' {{ $worker->availability == 1 ? 'selected' : '' }}>Ocupado</option>
                 </select>
                 <br><br>
+                <button class="btn btn-danger">Actualizar</button>
 
-                <button>Actualizar</button>
-                <a href='{{ route('workers.index') }}'>Ir al listado de trabajadores</a>
+                <button class="btn btn-info text-white"><a href="{{ route('workers.index') }}" class="text-white">Volver</a></button>
             </form>
         </div>
     </div>

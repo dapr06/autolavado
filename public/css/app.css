@@ -33,7 +33,7 @@ tr, th, td{
 
 .nav-link{
     align-items: center;
-    margin-right: 50px;
+    margin-right: 28px;
 }
 
 .navbar-nav .nav-link {
@@ -50,7 +50,7 @@ footer {
     color: white;
     padding-top: 10px;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 120px;
 }
 
 /*  TAMAÑO GENERAL ICONOS  */

@@ -8,8 +8,8 @@
                 @csrf
 
                 <x-workers-campos/>
-                <button>Registrar trabajador</button>
-                <a href='{{ route('workers.index') }}'>Volver al listado de trabajadores</a>
+                <button class="btn btn-danger text-white">Registrar trabajador</button>
+                <button class="btn btn-info text-white"><a href="{{ route('workers.index') }}" class="text-white">Volver</a></button><br><br>
             </form><br/>
         </div>
     </div>

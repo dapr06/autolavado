@@ -8,8 +8,8 @@
                 @csrf
 
                 <x-vehicles-campos/>
-                <button>Registrar vehículo</button>
-                <a href='{{ route('vehicles.index') }}'>Volver al listado de vehículos</a>
+                <button class="btn btn-danger text-white">Registrar vehículo</button>
+                <button class="btn btn-info text-white"><a href="{{ route('vehicles.index') }}" class="text-white">Volver</a></button><br><br>
             </form><br/>
         </div>
     </div>

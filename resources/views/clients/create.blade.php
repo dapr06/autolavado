@@ -8,9 +8,10 @@
                 @csrf
 
                 <x-clients-campos/>
-                <button>Registrar cliente</button>
-                <a href='{{ route('clients.index') }}'>Volver al listado de clientes</a>
-            </form><br/>
+
+                <button class="btn btn-danger text-white">Registrar cliente</button>
+                <button class="btn btn-info text-white"><a href="{{ route('clients.index') }}" class="text-white">Volver</a></button><br><br>
+            </form>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <x-menu/>
 <div class="container">
-    <br><h1 class="text-center">Trabajador {{$worker->name}} {{$worker->surname}}</h1><br>
+    <br><h1 class="text-center">Trabajador: {{$worker->name}} {{$worker->surname}}</h1><br>
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="card">
@@ -14,12 +14,11 @@
                         <p>Turno: {{$worker->turn}}</p>
                         <p>Disponibilidad: {{$worker->availability}}</p>
 
-                        <button><a href='{{ route('workers.edit', $worker) }}'>Editar</a></button>
+                        <button class="btn btn-primary text-white"><a href="{{ route('workers.edit', $worker) }}" class="text-white">Editar</a></button>
+                        <button class="btn btn-info text-white"><a href="{{ route('workers.index') }}" class="text-white">Volver</a></button>
 
                         @method('delete')
-                        <button>Eliminar</button>
-
-                        <br><a href='{{ route('workers.index') }}'>Volver al listado de trabajadores.</a>
+                        <button class="btn btn-danger">Eliminar</button>
                     </form>
                 </div>
             </div>

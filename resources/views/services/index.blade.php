@@ -11,6 +11,8 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body">
+                            <p>Categoría: {{ $service->category->category}}</p>
+
                             <h4 class="card-title text-center">{{ $service->name}}</h4>
                             <p class="card-text text-justify">{{ $service->description }}</p>
                             <p>Duración aproximada: {{ $service->time}}min</p>
@@ -21,25 +23,7 @@
                     <br>
                 </div>
             @endforeach
-        </div>
-
-       {{-- <div class="row">
-            @foreach ($services as $service)
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">{{ $service->name}}</h4>
-                                <p class="card-text text-justify">{{ $service->description }}</p>
-                                <p>Precio: {{ $service->price}}€</p>
-                                <p>Duración aproximada: {{ $service->time}}min</p>
-                                <p class="text-center"><a href='{{ route('services.edit', $service) }}'><img src="/img/edit.png" width="20" height="20"></a></p>
-                            </div>
-                        </div>
-                    </div>
-            @endforeach
-        </div>--}}
-
-        <br><br>
-        <button><a href='{{ route('services.create') }}'>Crear servicio</a></button><br><br>
+        </div><br>
+        <button class="btn btn-primary text-white"><a href="{{ route('services.create') }}" class="text-white">Registrar servicio</a></button><br><br>
     </div>
 <x-footer/>

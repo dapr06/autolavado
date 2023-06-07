@@ -13,6 +13,7 @@ return new class extends Migration
             'name' => 'administrador',
             'email' =>'admi@admi.com',
             'password' => bcrypt('123456789'),
+            'role' => 'ADMIN'
         ]);
 
         DB::table('workers')->insert([
@@ -23,7 +24,7 @@ return new class extends Migration
                 'email' => 'root@root.com',
                 'role' => 'ADMIN',
                 'turn' => '1',
-                'availability' => '1'
+
             ],
             [
                 'name' => 'Afro',
@@ -32,7 +33,7 @@ return new class extends Migration
                 'email' => 'afro@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-                'availability' => '1'
+
             ],
             [
                 'name' => 'Cristina',
@@ -41,7 +42,7 @@ return new class extends Migration
                 'email' => 'cristina@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-                'availability' => '1'
+
             ],
             [
                 'name' => 'Daniela',
@@ -50,7 +51,6 @@ return new class extends Migration
                 'email' => 'daniela@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-                'availability' => '1'
             ],
             [
                 'name' => 'Jorge',
@@ -59,7 +59,6 @@ return new class extends Migration
                 'email' => 'jorge@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-                'availability' => '1'
             ]
         ]);
         DB::table('clients')->insert([

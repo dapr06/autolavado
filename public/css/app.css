@@ -29,9 +29,10 @@ tr, th, td{
     color: white;
     justify-content: space-between;
     align-items: center;
-
 }
-
+.navbar-brand {
+    margin-top: 10px;
+}
 .nav-link{
     align-items: center;
     margin-right: 28px;

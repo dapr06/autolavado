@@ -1,11 +1,13 @@
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="/img/chapuzonLogo.png" width="120" height="40" alt="Logo">
-    </a>
     <div class="navbar-collapse">
         <ul class="navbar-nav ml-auto">
+            <li>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="/img/chapuzonLogo.png" width="120" height="40" alt="Logo">
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: white" href="{{ url('/') }}">Nosotros</a>
             </li>
@@ -14,21 +16,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: white" href="{{ url('/contacts') }}">Contacto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/vehicles') }}">Vehículos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/workers') }}">Trabajadores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/bookings') }}">Reservas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('#') }}">
@@ -58,6 +45,23 @@
                     </li>
                 @endauth
             @endif
+
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/vehicles') }}">Vehículos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/workers') }}">Trabajadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{ url('/bookings') }}">Reservas</a>
+            </li>
+
         </ul>
     </div>
 </nav>

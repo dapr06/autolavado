@@ -46,22 +46,32 @@
                 @endauth
             @endif
 
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/vehicles') }}">Vehículos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/workers') }}">Trabajadores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{ url('/bookings') }}">Reservas</a>
-            </li>
+            @can('viewCategories', App\Models\User::class)
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
+                </li>
+            @endcan
+            @can('viewWorkers', App\Models\User::class)
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ url('/workers') }}">Trabajadores</a>
+                </li>
+            @endcan
 
+            @can('viewVehicles', App\Models\User::class)
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ url('/vehicles') }}">Vehículos</a>
+                </li>
+            @endcan
+            @can('viewClients', App\Models\User::class)
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
+                </li>
+            @endcan
+            @can('viewBookings', App\Models\User::class)
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ url('/bookings') }}">Reservas</a>
+                </li>
+            @endcan
         </ul>
     </div>
 </nav>

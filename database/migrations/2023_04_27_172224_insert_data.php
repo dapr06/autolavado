@@ -13,7 +13,19 @@ return new class extends Migration
             'name' => 'administrador',
             'email' =>'admi@admi.com',
             'password' => bcrypt('123456789'),
-            'role' => 'ADMIN'
+            'role' => 'ADM'
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Trabajador',
+            'email' =>'trabajador@gmail.com',
+            'password' => bcrypt('123456789'),
+            'role' => 'TRA'
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Cliente',
+            'email' =>'cliente@gmail.com',
+            'password' => bcrypt('123456789'),
+            'role' => 'CLI'
         ]);
 
         DB::table('workers')->insert([

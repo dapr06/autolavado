@@ -1,6 +1,6 @@
 <x-menu/>
 <div class="container">
-    <br><h1 class="text-center"> CLiente: {{$client->name}} {{$client->surname}}</h1><br>
+    <br><h1 class="text-center"> Cliente: {{$client->name}} {{$client->surname}}</h1><br>
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="card">

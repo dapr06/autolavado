@@ -5,18 +5,35 @@
         <div class="col-md-12">
             <form action='{{route('clients.update',$client)}}' method='post'>
                 @method('put')
-                <label for='name'>Nombre</label>
-                <input type='text' id='name' name='name' value='{{ $client->name }}'/>
-                <br>
-                <label for='surname'>Apellido</label>
-                <input type='text' id='surname' name='surname' value='{{ $client->surname }}'/>
-                <br>
-                <label for='phone'>Teléfono</label>
-                <input type='text' id='phone' name='phone' value='{{ $client->phone }}'/>
-                <br>
-                <label for='email'>Correo electrónico</label>
-                <input type='text' id='email' name='email' value='{{ $client->email }}'/>
-                <br><br>
+                <label for="name">Nombre<span style="color: red">*</span></label>
+                <input type="text" id="name" name="name" value="{{ old('name', isset($client) ? $client->name : '') }}">
+
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for="surname">Apellidos<span style="color: red">*</span></label>
+                <input type="text" id="surname" name="surname" value="{{ old('surname', isset($client) ? $client->surname : '') }}">
+
+                @error('surname')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for="phone">Teléfono<span style="color: red">*</span></label>
+                <input type="text" id="phone" name="phone" value="{{ old('phone', isset($client) ? $client->phone : '') }}">
+
+                @error('phone')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for="email">Correo electrónico<span style="color: red">*</span></label>
+                <input type="text" id="email" name="email" value="{{ old('email', isset($client) ? $client->email : '') }}">
+
+                @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+
                 <button class="btn btn-danger">Actualizar</button>
 
                 <button class="btn btn-info text-white"><a href="{{ route('clients.index') }}" class="text-white">Volver</a></button>

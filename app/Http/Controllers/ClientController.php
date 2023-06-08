@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -19,14 +20,9 @@ class ClientController extends Controller
         return view('clients/create', compact('clients'));
     }
 
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'surname' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-        ]);
+        $validatedData = $request->validate($request->rules(), $request->messages());
 
         $client = new Client();
         $client->name = $request->name;
@@ -36,6 +32,7 @@ class ClientController extends Controller
         $client->save();
         return redirect()->route('clients.index');
     }
+
 
     public function show(Client $client)
     {
@@ -47,14 +44,9 @@ class ClientController extends Controller
         return view('clients/edit', compact('client'));
     }
 
-    public function update(Request $request, Client $client)
+    public function update(ClientRequest $request, Client $client)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'surname' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-        ]);
+        $validatedData = $request->validate($request->rules(), $request->messages());
 
         $client->name = $request->name;
         $client->surname = $request->surname;

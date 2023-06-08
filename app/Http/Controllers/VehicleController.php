@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
@@ -16,8 +17,9 @@ class VehicleController extends Controller
 
     public function create()
     {
+        $clients = Client::orderBy('name')->get();
         $vehicles = Vehicle::orderBy('number_plate')->get();
-        return view('vehicles/create', compact('vehicles'));
+        return view('vehicles/create', compact('vehicles', 'clients'));
     }
 
     public function store(Request $request)

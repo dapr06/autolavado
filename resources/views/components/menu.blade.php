@@ -1,5 +1,4 @@
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-{{--
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="navbar-collapse">
@@ -89,4 +88,3 @@
         }
     }
 </style>
---}}

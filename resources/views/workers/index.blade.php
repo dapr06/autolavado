@@ -12,7 +12,6 @@
                         <th>Correo electrónico</th>
                         <th>Rol</th>
                         <th>Turno</th>
-                        <th>Disponibilidad</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
@@ -25,7 +24,6 @@
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->email}}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->role }}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->turn == 0 ? 'Mañana' : 'Tarde' }}</a></td>
-                            <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->availability ? 'Ocupado' : 'Libre' }}</a></td>
                             <td>
                                 <form action='{{ route('workers.destroy', $worker) }}' method='post'>
                                     @method('delete')

@@ -12,7 +12,6 @@
                         <p>Correo electrónico: {{$worker->email}}</p>
                         <p>Rol: {{$worker->role}}</p>
                         <p>Turno: {{$worker->turn}}</p>
-                        <p>Disponibilidad: {{$worker->availability}}</p>
 
                         <button class="btn btn-primary text-white"><a href="{{ route('workers.edit', $worker) }}" class="text-white">Editar</a></button>
                         <button class="btn btn-info text-white"><a href="{{ route('workers.index') }}" class="text-white">Volver</a></button>

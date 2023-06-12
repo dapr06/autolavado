@@ -11,47 +11,38 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAny(User $user)
-    {
-        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM);
-    }
     public function viewCategories(User $user)
     {
-        return $user->hasRole(User::ROLE_ADM);
+        return $user->hasRole(User::ROLE_ADM)
+            ? Response::allow()
+            : Response::deny('No tienes permiso para entrar a las categorías.');
     }
-       public function viewWorkers(User $user)
+
+    public function viewWorkers(User $user)
     {
-        return $user->hasRole(User::ROLE_ADM);
+        return $user->hasRole(User::ROLE_ADM)
+            ? Response::allow()
+            : Response::deny('No tienes permiso para entrar a los trabajadores.');
     }
 
-
-
+    public function viewBookings(User $user)
+    {
+        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM)
+            ? Response::allow()
+            : Response::deny('No tienes permiso para entrar a las reservas.');
+    }
 
     public function viewVehicles(User $user)
     {
-        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM);
+        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM)
+            ? Response::allow()
+            : Response::deny('No tienes permiso para entrar a los vehículos.');
     }
     public function viewClients(User $user)
     {
-        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM);
-    }
-    public function viewBookings(User $user)
-    {
-        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM);
+        return $user->hasRole(User::ROLE_TRA) || $user->hasRole(User::ROLE_ADM)
+            ? Response::allow()
+            : Response::deny('No tienes permiso para entrar a los clientes.');
     }
 
-
-
-    public function create(User $user)
-    {
-        return $user->hasRole(User::ROLE_ADM);
-    }
-    public function show(User $user)
-    {
-        return $user->hasRole(User::ROLE_ADM);
-    }
-    public function edit(User $user)
-    {
-        return $user->hasRole(User::ROLE_ADM);
-    }
 }

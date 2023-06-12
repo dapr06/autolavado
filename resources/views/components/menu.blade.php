@@ -46,28 +46,31 @@
                 @endauth
             @endif
 
-            @can('viewCategories', App\Models\User::class)
+            @can('view-categories')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>
                 </li>
             @endcan
-            @can('viewWorkers', App\Models\User::class)
+
+            @can('view-workers')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/workers') }}">Trabajadores</a>
                 </li>
             @endcan
 
-            @can('viewVehicles', App\Models\User::class)
-                <li class="nav-item">
+            @can('view-vehicles')
+            <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/vehicles') }}">Vehículos</a>
                 </li>
             @endcan
-            @can('viewClients', App\Models\User::class)
+
+            @can('view-clients')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/clients') }}">Clientes</a>
                 </li>
             @endcan
-            @can('viewBookings', App\Models\User::class)
+
+            @can('view-bookings')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/bookings') }}">Reservas</a>
                 </li>

@@ -16,13 +16,13 @@ return new class extends Migration
             'role' => 'ADM'
         ]);
         DB::table('users')->insert([
-            'name' => 'Trabajador',
+            'name' => 'trabajador',
             'email' =>'trabajador@gmail.com',
             'password' => bcrypt('123456789'),
             'role' => 'TRA'
         ]);
         DB::table('users')->insert([
-            'name' => 'Cliente',
+            'name' => 'cliente',
             'email' =>'cliente@gmail.com',
             'password' => bcrypt('123456789'),
             'role' => 'CLI'

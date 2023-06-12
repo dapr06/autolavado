@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <form action='{{route('categories.update', $category)}}' method='post'>
                 @method('put')
-                <label for='category'> Categoría<span style="color: red">*</span> </label>
+                <label for='category'> Categoría<span class="required">*</span></label>
                 <input type='text' id='category' name='category' value="{{ old('category', isset($category) ? $category->category : '') }}">
 
                 @error('category')

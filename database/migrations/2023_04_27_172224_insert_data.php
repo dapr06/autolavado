@@ -10,33 +10,35 @@ return new class extends Migration
     public function up(): void
     {
         DB::table('users')->insert([
-            'name' => 'administrador',
-            'email' =>'admi@admi.com',
-            'password' => bcrypt('123456789'),
-            'role' => 'ADM'
+            [
+                'name' => 'administrador',
+                'email' =>'admi@admi.com',
+                'password' => bcrypt('123456789'),
+                'role' => 'ADM'
+            ],
+            [
+                'name' => 'trabajador',
+                'email' =>'trabajador@gmail.com',
+                'password' => bcrypt('123456789'),
+                'role' => 'TRA'
+            ],
+            [
+                'name' => 'cliente',
+                'email' =>'cliente@gmail.com',
+                'password' => bcrypt('123456789'),
+                'role' => 'CLI'
+            ]
         ]);
-        DB::table('users')->insert([
-            'name' => 'trabajador',
-            'email' =>'trabajador@gmail.com',
-            'password' => bcrypt('123456789'),
-            'role' => 'TRA'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'cliente',
-            'email' =>'cliente@gmail.com',
-            'password' => bcrypt('123456789'),
-            'role' => 'CLI'
-        ]);
+
 
         DB::table('workers')->insert([
             [
-                'name' => 'root',
-                'surname' =>'root',
-                'DNI' => '5555555A',
-                'email' => 'root@root.com',
-                'role' => 'ADMIN',
-                'turn' => '1',
-
+                'name' => 'admi',
+                'surname' =>'admi',
+                'DNI' => '55555555A',
+                'email' => 'admi@admi.com',
+                'role' => 'ADM',
+                'turn' => '0',
             ],
             [
                 'name' => 'Afro',
@@ -45,7 +47,6 @@ return new class extends Migration
                 'email' => 'afro@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-
             ],
             [
                 'name' => 'Cristina',
@@ -54,7 +55,6 @@ return new class extends Migration
                 'email' => 'cristina@gmail.com',
                 'role' => 'TRA',
                 'turn' => '0',
-
             ],
             [
                 'name' => 'Daniela',
@@ -114,31 +114,41 @@ return new class extends Migration
                 'client_id' => '1',
                 'number_plate' => '4978ldj',
                 'interior_type' =>'cuero',
-                'color' => 'rojo',
+                'interior_color' => 'rojo',
+                'exterior_type' => 'pintura',
+                'exterior_color' => 'verde',
             ],
             [
                 'client_id' => '1',
                 'number_plate' => '4758hfr',
                 'interior_type' =>'sintético',
-                'color' => 'amarillo',
+                'interior_color' => 'amarillo',
+                'exterior_type' => 'pintura',
+                'exterior_color' => 'gris',
             ],
             [
                 'client_id' => '2',
                 'number_plate' => '1785htr',
-                'interior_type' =>'sintético',
-                'color' => 'negro',
+                'interior_type' =>'alcántara',
+                'interior_color' => 'negro',
+                'exterior_type' => 'vinilo',
+                'exterior_color' => 'negro',
             ],
             [
                 'client_id' => '2',
                 'number_plate' => '1425mdl',
                 'interior_type' =>'cuero',
-                'color' => 'gris',
+                'interior_color' => 'gris',
+                'exterior_type' => 'pintura',
+                'exterior_color' => 'azul',
             ],
             [
                 'client_id' => '2',
-                'number_plate' => '1247',
+                'number_plate' => '1247kln',
                 'interior_type' =>'tela',
-                'color' => 'azul',
+                'interior_color' => 'azul',
+                'exterior_type' => 'pintura',
+                'exterior_color' => 'rojo',
             ]
         ]);
 

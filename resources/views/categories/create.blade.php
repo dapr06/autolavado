@@ -6,7 +6,7 @@
             <form action='{{ route('categories.store') }}' method='post'>
                 @method('post')
                 @csrf
-                <label for='category'> Categoría<span style="color: red">*</span> </label>
+                <label for='category'> Categoría<span class="required">*</span></label>
                 <input type='text' id='category' name='category' value="{{ old('category', isset($category) ? $category->category : '') }}">
 
                 @error('category')

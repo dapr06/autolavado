@@ -8,8 +8,10 @@
                     <tr>
                         <th>Propietario</th>
                         <th>Matrícula</th>
-                        <th>Interior</th>
-                        <th>Color</th>
+                        <th>Tipo Interior</th>
+                        <th>Color Interior</th>
+                        <th>Tipo Exterior</th>
+                        <th>Color Exterior</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
@@ -19,7 +21,9 @@
                             <td><a href='{{ route('vehicles.show', $vehicle->client_id) }}'>{{ $vehicle->client->name }} {{ $vehicle->client->surname }}</a></td>
                             <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->number_plate }}</a></td>
                             <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->interior_type}}</a></td>
-                            <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->color }}</a></td>
+                            <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->interior_color}}</a></td>
+                            <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->exterior_type}}</a></td>
+                            <td><a href='{{ route('vehicles.show', $vehicle) }}'>{{ $vehicle->exterior_color}}</a></td>
                             <td>
                                 <form action='{{ route('vehicles.destroy', $vehicle) }}' method='post'>
                                     @method('delete')

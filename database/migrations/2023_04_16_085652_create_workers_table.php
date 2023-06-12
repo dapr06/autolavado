@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('surname', 50);
             $table->char('DNI', 9);
-            $table->char('email', 70);
-            $table->string('role', 15);
+            $table->char('email', 40);
+            $table->string('role', 3);
             $table->boolean('turn');
             $table->timestamps();
         });

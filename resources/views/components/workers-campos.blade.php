@@ -1,27 +1,39 @@
-<label for='name'>  Nombre </label>
-<input type='text' id='name' name='name' value='{{ $worker->name ?? '' }}' />
-<br>
-<label for='surname'>  Apellido </label>
-<input type='text' id='surname' name='surname' value='{{ $worker->surname ?? '' }}' />
-<br>
-<label for='DNI'>  DNI </label>
-<input type='text' id='DNI' name='DNI' value='{{ $worker->DNI ?? '' }}' />
-<br>
-<label for='email'>  Correo electrónico </label>
-<input type='text' id='email' name='email' value='{{ $worker->email ?? '' }}' />
-<br>
-<label for='role'>  Rol </label>
-<input type='text' id='role' name='role' value='{{ $worker->role ?? '' }}' />
-<br>
-<label for="turn">Turno:</label>
+<label for='name'>  Nombre<span class="required">*</span></label>
+<input type="text" id="name" name="name" value="{{ old('name', isset($worker) ? $worker->name : '') }}">
+@error('name')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<label for='surname'>  Apellido<span class="required">*</span></label>
+<input type='text' id='surname' name='surname' value="{{ old('surname', isset($worker) ? $worker->surname : '') }}">
+@error('surname')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<label for='DNI'>  DNI<span class="required">*</span></label>
+<input type='text' id='DNI' name='DNI' value="{{ old('DNI', isset($worker) ? $worker->DNI : '') }}">
+@error('DNI')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<label for='email'>  Correo electrónico<span class="required">*</span></label>
+<input type='text' id='email' name='email' value="{{ old('email', isset($worker) ? $worker->email : '') }}">
+@error('email')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<label for='role'>  Rol<span class="required">*</span></label>
+<input type='text' id='role' name='role' value="{{ old('role', isset($worker) ? $worker->role : '') }}">
+@error('role')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<label for="turn">Turno<span class="required">*</span></label>
 <select name="turn" id="turn">
     <option value="0">Mañana</option>
     <option value="1">Tarde</option>
 </select>
-<br>
-<label for="availability">Disponibilidad:</label>
-<select name="availability" id="availability">
-    <option value="0">Libre</option>
-    <option value="1">Ocupado</option>
-</select>
+@error('turn')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
 <br><br>

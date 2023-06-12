@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WorkerRequest;
 use App\Models\Worker;
-use Illuminate\Http\Request;
 
 class WorkerController extends Controller
 {
@@ -13,28 +13,16 @@ class WorkerController extends Controller
         return view('workers/index', compact('workers'));
     }
 
-
-
     public function create()
     {
-
         $workers = Worker::orderBy('name')->get();
         return view('workers/create', compact('workers'));
     }
 
-
-    public function store(Request $request)
+    public function store(WorkerRequest $request)
     {
         {
-            $this->validate($request, [
-                'name' => 'required',
-                'surname' => 'required',
-                'DNI' => 'required',
-                'email' => 'required',
-                'role' => 'required',
-                'turn' => 'required|in:0,1',
-                'availability' => 'required',
-            ]);
+            $validatedData = $request->validate($request->rules(), $request->messages());
 
             $worker = new Worker();
             $worker->name = $request->name;
@@ -43,42 +31,27 @@ class WorkerController extends Controller
             $worker->email = $request->email;
             $worker->role = $request->role;
             $worker->turn = $request->turn;
-            $worker->availability = $request->availability;
             $worker->save();
             return redirect()->route('workers.index');
         }
     }
 
-
     public function show(Worker $worker)
     {
-
         $worker->turn = $worker->turn ? 'Tarde' : 'Mañana';
         $worker->availability = $worker->availability ? 'Ocupado' : 'Libre';
         return view('workers/show', compact('worker'));
     }
 
-
     public function edit(Worker $worker)
     {
-
         return view('workers.edit', compact('worker'));
     }
 
-
-    public function update(Request $request, Worker $worker)
+    public function update(WorkerRequest $request, Worker $worker)
     {
         {
-            $this->validate($request, [
-                'name' => 'required',
-                'surname' => 'required',
-                'DNI' => 'required',
-                'email' => 'required',
-                'role' => 'required',
-                'turn' => 'required',
-                'availability' => 'required',
-            ]);
-
+            $request->validate($request->rules(), $request->messages());
 
             $worker->name = $request->name;
             $worker->surname = $request->surname;
@@ -86,7 +59,6 @@ class WorkerController extends Controller
             $worker->email = $request->email;
             $worker->role = $request->role;
             $worker->turn = $request->turn;
-            $worker->availability = $request->availability;
             $worker->save();
 
             return redirect()->route('workers.index');

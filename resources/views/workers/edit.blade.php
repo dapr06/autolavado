@@ -5,35 +5,47 @@
         <div class="col-md-12">
             <form action='{{route('workers.update',$worker)}}' method='post'>
                 @method('put')
-                <label for='name'>Nombre </label>
-                <input id='name' name='name' type='text' value='{{$worker->name}}'>
-                <br>
-                <label for='surname'>Apellido </label>
-                <input id='surname' name='surname' type='text' value='{{ $worker->surname }}'>
-                <br>
-                <label for='DNI'>DNI </label>
-                <input id='DNI' name='DNI' type='text' value='{{ $worker->DNI }}'>
-                <br>
-                <label for='email'>Correo electrónico </label>
-                <input id='email' name='email' type='text' value='{{ $worker->email }}'>
-                <br>
-                <label for='role'>Rol </label>
-                <input id='role' name='role' type='text' value='{{ $worker->role }}'>
-                <br>
-                <label for="turn">Turno</label>
-                <select name="turn" id="turn">
-                    <option value="0" {{ $worker->turn == 0 ? 'selected' : '' }}>Mañana</option>
-                    <option value="1" {{ $worker->turn == 1 ? 'selected' : '' }}>Tarde</option>
-                </select>
-                <br><br>
-                <label for='availability'>  Disponibilidad </label>
-                <select id='availability' name='availability'>
-                    <option value='0' {{ $worker->availability == 0 ? 'selected' : '' }}>Libre</option>
-                    <option value='1' {{ $worker->availability == 1 ? 'selected' : '' }}>Ocupado</option>
-                </select>
-                <br><br>
-                <button class="btn btn-danger">Actualizar</button>
+                <label for='name'>  Nombre<span class="required">*</span></label>
+                <input type="text" id="name" name="name" value="{{ old('name', isset($worker) ? $worker->name : '') }}">
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
+                <label for='surname'>  Apellido<span class="required">*</span></label>
+                <input type='text' id='surname' name='surname' value="{{ old('surname', isset($worker) ? $worker->surname : '') }}">
+                @error('surname')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for='DNI'>  DNI<span class="required">*</span></label>
+                <input type='text' id='DNI' name='DNI' value="{{ old('DNI', isset($worker) ? $worker->DNI : '') }}">
+                @error('DNI')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for='email'>  Correo electrónico<span class="required">*</span></label>
+                <input type='text' id='email' name='email' value="{{ old('email', isset($worker) ? $worker->email : '') }}">
+                @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for='role'>  Rol<span class="required">*</span></label>
+                <input type='text' id='role' name='role' value="{{ old('role', isset($worker) ? $worker->role : '') }}">
+                @error('role')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for="turn">Turno<span class="required">*</span></label>
+                <select name="turn" id="turn">
+                    <option value="0">Mañana</option>
+                    <option value="1">Tarde</option>
+                </select>
+                @error('turn')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                <br><br>
+
+                <button class="btn btn-danger">Actualizar</button>
                 <button class="btn btn-info text-white"><a href="{{ route('workers.index') }}" class="text-white">Volver</a></button>
             </form>
         </div>

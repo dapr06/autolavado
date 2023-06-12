@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use App\Models\Client;
-use Illuminate\Http\Request;
+use App\Http\Requests\VehicleRequest;
 
 class VehicleController extends Controller
 {
@@ -22,20 +22,17 @@ class VehicleController extends Controller
         return view('vehicles/create', compact('vehicles', 'clients'));
     }
 
-    public function store(Request $request)
+    public function store(VehicleRequest $request)
     {
-        $this->validate($request, [
-            'client_id' => 'required',
-            'number_plate' => 'required',
-            'interior_type' => 'required',
-            'color' => 'required',
-        ]);
+        $validatedData = $request->validate($request->rules(), $request->messages());
 
         $vehicle = new Vehicle();
         $vehicle->client_id = $request->client_id;
         $vehicle->number_plate = $request->number_plate;
         $vehicle->interior_type = $request->interior_type;
-        $vehicle->color = $request->color;
+        $vehicle->interior_color = $request->interior_color;
+        $vehicle->exterior_type = $request->exterior_type;
+        $vehicle->exterior_color = $request->exterior_color;
         $vehicle->save();
         return redirect()->route('vehicles.index');
     }
@@ -47,22 +44,20 @@ class VehicleController extends Controller
 
     public function edit(Vehicle $vehicle)
     {
-        return view('vehicles/edit', compact('vehicle'));
+        $clients = Client::orderBy('name')->get();
+        return view('vehicles/edit', compact('vehicle', 'clients'));
     }
 
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(VehicleRequest $request, Vehicle $vehicle)
     {
-        $this->validate($request, [
-            'client_id' => 'required',
-            'number_plate' => 'required',
-            'interior_type' => 'required',
-            'color' => 'required',
-        ]);
+        $validatedData = $request->validate($request->rules(), $request->messages());
 
         $vehicle->client_id = $request->client_id;
         $vehicle->number_plate = $request->number_plate;
         $vehicle->interior_type = $request->interior_type;
-        $vehicle->color = $request->color;
+        $vehicle->interior_color = $request->interior_color;
+        $vehicle->exterior_type = $request->exterior_type;
+        $vehicle->exterior_color = $request->exterior_color;
         $vehicle->save();
         return redirect()->route('vehicles.index');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,9 @@ class ServiceController extends Controller
 {
     public function index()
     {
+        $categories = Category::orderBy('category')->get();
         $services = Service::orderBy('name')->get();
-        return view('services/index', compact('services'));
+        return view('services/index', compact('services', 'categories'));
     }
 
     public function create()

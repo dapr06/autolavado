@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WorkerController;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
@@ -61,10 +62,14 @@ Route::middleware(['auth', 'can:view-clients'])->group(function () {
 require __DIR__.'/auth.php';
 
 // Para no estar registrados y que se pueda ver
-Route::get('/services', function () {
+/*Route::get('/services', function () {
     $services = \App\Models\Service::orderBy('id')->get();
-    return view('/services/index', compact('services'));
-})->name('services.index');
+    $categories = Category::orderBy('category')->get();
+
+    return view('/services/index', compact('services', 'categories'));
+})->name('services.index');*/
+Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+
 
 Route::get('/contacts', function () {
     return view('/contacts/index');

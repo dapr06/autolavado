@@ -33,14 +33,6 @@ return new class extends Migration
 
         DB::table('workers')->insert([
             [
-                'name' => 'admi',
-                'surname' =>'admi',
-                'DNI' => '55555555A',
-                'email' => 'admi@admi.com',
-                'role' => 'ADM',
-                'turn' => '0',
-            ],
-            [
                 'name' => 'Afro',
                 'surname' =>'De Carvalho',
                 'DNI' => '1245789Z',

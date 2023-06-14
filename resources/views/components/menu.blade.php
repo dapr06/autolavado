@@ -46,7 +46,7 @@
                     </li>
                 @endauth
             @endif
-
+            @inject('userModel', 'App\Models\User')
             @can('view-categories')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>

@@ -24,5 +24,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('view-bookings', [UserPolicy::class, 'viewBookings']);
         Gate::define('view-vehicles', [UserPolicy::class, 'viewVehicles']);
         Gate::define('view-clients', [UserPolicy::class, 'viewClients']);
+        Gate::define('view-services', [UserPolicy::class, 'viewServices']);
     }
 }

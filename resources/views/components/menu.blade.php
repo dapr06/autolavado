@@ -1,4 +1,5 @@
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+<script src="{{ asset('js/app.js') }}"></script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="navbar-collapse">
@@ -45,7 +46,7 @@
                     </li>
                 @endauth
             @endif
-
+            @inject('userModel', 'App\Models\User')
             @can('view-categories')
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{{ url('/categories') }}">Categorías</a>

@@ -1,6 +1,9 @@
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 <script src="{{ asset('js/app.js') }}"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <a class="navbar-brand" href="{{ url('/') }}">
         <img src="/img/chapuzonLogo.png" width="120" height="40" alt="Logo">

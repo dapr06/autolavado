@@ -8,7 +8,6 @@
                 @csrf
                 <label for='client_id'>Propietario/a<span class="required">*</span></label>
                 <select id='client_id' name='client_id'>
-                    <option disabled selected>Seleccione una opción</option>
                     @foreach ($clients as $client)
                         <option value="{{ $client->id }}" {{ old('client_id', $vehicle->client_id) == $client->id ? 'selected' : '' }}>
                             {{ $client->name }} {{ $client->surname }}
@@ -27,7 +26,6 @@
 
                 <label for='interior_type'>Tipo de interior<span class="required">*</span></label>
                 <select id='interior_type' name='interior_type'>
-                    <option disabled>Seleccione una opción</option>
                     <option value="cuero" {{ old('interior_type', $vehicle->interior_type) == 'cuero' ? 'selected' : '' }}>Cuero</option>
                     <option value="sintético" {{ old('interior_type', $vehicle->interior_type) == 'sintético' ? 'selected' : '' }}>Sintético</option>
                     <option value="tela" {{ old('interior_type', $vehicle->interior_type) == 'tela' ? 'selected' : '' }}>Tela</option>
@@ -45,7 +43,6 @@
 
                 <label for='exterior_type'>Tipo de exterior<span class="required">*</span></label>
                 <select id='exterior_type' name='exterior_type'>
-                    <option disabled>Seleccione una opción</option>
                     <option value="pintura" {{ old('interior_type', $vehicle->interior_type) == 'pintura' ? 'selected' : '' }}>Pintura</option>
                     <option value="vinilo" {{ old('interior_type', $vehicle->interior_type) == 'vinilo' ? 'selected' : '' }}>Vinilo</option>
                 </select>

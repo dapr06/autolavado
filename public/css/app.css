@@ -20,31 +20,47 @@ tr, th, td{
     border: black 1px solid;
 }
 
-/*  MENU  */
-
-.navbarNav{
-    background: dodgerblue;
-    display: flex;
-    flex-wrap: nowrap;
+/*TAMAÑO GENERAL ICONOS*/
+.iconSize{
+    width: 26px;
+    height: 25px;
+}
+/* ESTILOS MENU */
+.navbar-dark .navbar-nav .nav-link {
     color: white;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar-brand {
-    margin-top: 10px;
-}
-.nav-link{
-    align-items: center;
-    margin-right: 28px;
+    transition: color .2s;
 }
 
-.navbar-nav .nav-link {
-    color: #fff;
-    transition: transform 0.3s ease-in-out;
-    margin-top: 20px;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: black;
 }
-.navbar-nav .nav-link:hover {
-    transform: scale(1.1);
+
+.navbar-dark .navbar-brand {
+    color: #000000;
+    font-weight: bold;
+}
+
+.navbar-dark {
+    background-color: dodgerblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+.top {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+
+/* TABLA SERVICE FONDO CARD */
+.bodyService {
+    background-image: url('/img/fondoService.png');
+}
+.bodyService:hover {
+    border: 3px solid dodgerblue;
+}
+
+/* TABLA SERVICE MENU CATEGORIAS */
+.catMenu {
+    margin-right: 10px;
 }
 
 /*    FOOTER    */
@@ -53,16 +69,13 @@ footer {
     color: white;
     padding-top: 10px;
     text-align: center;
-    margin-top: 120px;
+    margin-top: 45px;
+}
+.catFooter {
+    margin-bottom: 145px;
 }
 
-/*  TAMAÑO GENERAL ICONOS  */
-.iconSize{
-    width: 26px;
-    height: 25px;
-}
-
-/* MAPA CONTACTO*/
+/* MAPA CONTACTO */
 .tittle{
     text-align: center;
     margin: 10px;
@@ -133,3 +146,8 @@ iframe {
 .required {
     color: red;
 }
+
+
+
+
+

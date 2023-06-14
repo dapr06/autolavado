@@ -1,5 +1,5 @@
 <x-menu/>
-<div class="container">
+<div class="container catFooter">
     <br><h1 class="text-center">Esta editando la categoría: {{$category->category}}</h1>
     <div class="row">
         <div class="col-md-12">

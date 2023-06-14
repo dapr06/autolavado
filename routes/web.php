@@ -36,8 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::resource('services', ServiceController::class);
 });
 
 //SOLO ADM PUEDE VER CATEGORIAS Y TRABAJADORES
@@ -46,6 +44,9 @@ Route::middleware(['auth', 'can:view-workers'])->group(function () {
 });
 Route::middleware(['auth', 'can:view-categories'])->group(function () {
     Route::resource('categories', CategoryController::class);
+});
+Route::middleware(['auth', 'can:view-services'])->group(function () {
+    Route::resource('services', ServiceController::class);
 });
 
 //PUEDEN ACCEDER ADM Y ROL

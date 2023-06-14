@@ -30,8 +30,8 @@
 
 <label for="turn">Turno<span class="required">*</span></label>
 <select name="turn" id="turn">
-    <option value="0">Mañana</option>
-    <option value="1">Tarde</option>
+    <option value="0" <?php if(old('turn', isset($turn) ? $turn : '') == 0) echo 'selected'; ?>>Mañana</option>
+    <option value="1" <?php if(old('turn', isset($turn) ? $turn : '') == 1) echo 'selected'; ?>>Tarde</option>
 </select>
 @error('turn')
 <div class="alert alert-danger">{{ $message }}</div>

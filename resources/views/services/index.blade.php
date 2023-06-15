@@ -24,7 +24,11 @@
                         <p class="card-text text-justify">{{ $service->description }}</p>
                         <p>Duración aprox: {{ $service->time}}min</p>
                         <p>Precio: {{ $service->price}}€</p>
-
+                        <form action="{{ route('cart.add') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="service_id" value="{{ $service->id }}">
+                            <button class="btn btn-primary text-white" type="submit">Añadir al carrito</button>
+                        </form>
                         @can('view-services')
                             <form action='{{ route('services.destroy', $service) }}' method='post'>
                                 @method('delete')

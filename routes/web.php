@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\CartController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -75,3 +76,13 @@ Route::get('/services', [ServiceController::class, 'index'])->name('services.ind
 Route::get('/contacts', function () {
     return view('/contacts/index');
 })->name('contacts.index');
+
+
+// routes/web.php
+
+Route::group(['middleware' => 'auth'], function () {
+    // Rutas para el carrito de compras
+    Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::delete('/cart/remove/{cartItemId}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+});

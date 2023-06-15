@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
+use App\Models\User;
 
 class ClientController extends Controller
 {
@@ -24,11 +25,23 @@ class ClientController extends Controller
         $validatedData = $request->validate($request->rules(), $request->messages());
 
         $client = new Client();
-        $client->name = $request->name;
-        $client->surname = $request->surname;
-        $client->phone = $request->phone;
-        $client->email = $request->email;
+        $client->name = $validatedData['name'];
+        $client->email = $validatedData['email'];
+        $client->surname = $validatedData['surname'];
+        $client->phone = $validatedData['phone'];
         $client->save();
+
+        // Crear el usuario correspondiente al cliente
+        $user = new User();
+        $user->email = $client->email;
+        $user->name = $client->name;
+        $user->password = bcrypt('123456789'); // Contraseña predeterminada (puedes cambiarla)
+        $user->save();
+
+        // Asignar el ID del usuario al cliente
+        $client->user_id = $user->id;
+        $client->save();
+
         return redirect()->route('clients.index');
     }
 

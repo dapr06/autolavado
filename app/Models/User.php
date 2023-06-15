@@ -10,6 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Cart;
 
+use App\Models\Client;
+use App\Models\Worker;
 
 class User extends Authenticatable
 {
@@ -38,6 +40,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function client()
+    {
+        return $this->hasOne(Client::class);
+    }
+
+    public function worker()
+    {
+        return $this->hasOne(Worker::class);
+    }
 
     public function cartItems()
     {

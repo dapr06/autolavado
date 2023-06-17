@@ -86,3 +86,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/cart/remove/{cartItemId}', [CartController::class, 'removeFromCart'])->name('cart.remove');
     Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 });
+

@@ -51,7 +51,7 @@ tr, th, td{
 
 
 /* TABLA SERVICE FONDO CARD */
-.bodyService {
+.bodyService, .bodyServiceWo {
     background-image: url('/img/fondoService.png');
 }
 .bodyService:hover {
@@ -73,6 +73,9 @@ footer {
 }
 .catFooter {
     margin-bottom: 145px;
+}
+.cartFooter {
+    margin-bottom: 235px;
 }
 
 /* MAPA CONTACTO */

@@ -12,18 +12,21 @@ return new class extends Migration
         DB::table('users')->insert([
             [
                 'name' => 'administrador',
+                'surname' => 'administrador',
                 'email' =>'admi@admi.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'ADM'
             ],
             [
                 'name' => 'trabajador',
+                'surname' => 'trabajador',
                 'email' =>'trabajador@gmail.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'TRA'
             ],
             [
                 'name' => 'cliente',
+                'surname' => 'cliente',
                 'email' =>'cliente@gmail.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'CLI'

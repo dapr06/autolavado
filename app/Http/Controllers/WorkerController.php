@@ -32,6 +32,7 @@ class WorkerController extends Controller
                 // Crear una nueva instancia de User y copiar los datos del trabajador
                 $user = new User();
                 $user->name = $worker->name;
+                $user->surname = $worker->surname;
                 $user->email = $worker->email;
                 $user->password = bcrypt('123456789');
 

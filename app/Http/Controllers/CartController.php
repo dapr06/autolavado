@@ -16,6 +16,9 @@ class CartController extends Controller
         // Encuentra el servicio en la base de datos
         $service = Service::findOrFail($serviceId);
 
+        // Desactiva el servicio seleccionado
+        $service->update(['active' => false]);
+
         // Crea un nuevo elemento en el carrito para el usuario autenticado
         auth()->user()->cartItems()->create([
             'service_id' => $serviceId,
@@ -43,7 +46,7 @@ class CartController extends Controller
         $cartItems = auth()->user()->cartItems;
 
         // Puedes pasar los elementos del carrito a la vista
-        return view('cart.view', ['cartItems' => $cartItems]);
+        return view('cart.view', compact('cartItems'));
     }
-}
 
+}

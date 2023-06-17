@@ -12,7 +12,8 @@ class ServiceController extends Controller
     {
         $categories = Category::orderBy('category')->get();
         $services = Service::orderBy('name')->get();
-        return view('services/index', compact('services', 'categories'));
+        $cartItems = auth()->user()->cartItems;
+        return view('services/index', compact('services', 'categories', 'cartItems'));
     }
 
     public function create()

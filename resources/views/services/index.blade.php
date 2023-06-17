@@ -24,11 +24,11 @@
                         <p class="card-text text-justify">{{ $service->description }}</p>
                         <p>Duración aprox: {{ $service->time}}min</p>
                         <p>Precio: {{ $service->price}}€</p>
-                        <form action="{{ route('cart.add') }}" method="POST">
+                        <form action="{{ route('cart.add') }}" method="POST" class="text-center">
                             @csrf
                             <input type="hidden" name="service_id" value="{{ $service->id }}">
                             @if($cartItems->contains('service_id', $service->id))
-                                <button class="btn btn-primary text-white" type="submit" disabled>Añadido al carrito</button>
+                                <button class="btn btn-primary text-white" type="submit" disabled>Ya esta añadido</button>
                             @else
                                 <button class="btn btn-primary text-white" type="submit">Añadir al carrito</button>
                             @endif

@@ -17,6 +17,12 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
 
+                <label for='phone'>  Teléfono<span class="required">*</span></label>
+                <input type='text' id='phone' name='phone' value="{{ old('phone', isset($worker) ? $worker->phone : '') }}">
+                @error('phone')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
                 <label for='DNI'>  DNI<span class="required">*</span></label>
                 <input type='text' id='DNI' name='DNI' value="{{ old('DNI', isset($worker) ? $worker->DNI : '') }}">
                 @error('DNI')

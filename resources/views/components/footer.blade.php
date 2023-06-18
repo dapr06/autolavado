@@ -4,8 +4,8 @@
             <div class="col-md-4">
                 <h3>Contacto</h3>
                 <ul class="list-unstyled">
-                    <li>Teléfono: 123-456-7890</li>
-                    <li>Dirección: Avenida x, n3, 28942, Getafe</li>
+                    <li>Teléfono: 657852149</li>
+                    <li>Dirección: Calle. Herreros, Nº1, Getafe, 28906</li>
                     <li>Correo electrónico: infochapuzon@gmail.com</li>
                 </ul>
             </div>

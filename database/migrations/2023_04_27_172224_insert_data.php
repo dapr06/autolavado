@@ -13,6 +13,7 @@ return new class extends Migration
             [
                 'name' => 'administrador',
                 'surname' => 'administrador',
+                'phone' =>'000000000',
                 'email' =>'admi@admi.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'ADM'
@@ -20,6 +21,7 @@ return new class extends Migration
             [
                 'name' => 'trabajador',
                 'surname' => 'trabajador',
+                'phone' =>'000000000',
                 'email' =>'trabajador@gmail.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'TRA'
@@ -27,6 +29,7 @@ return new class extends Migration
             [
                 'name' => 'cliente',
                 'surname' => 'cliente',
+                'phone' =>'000000000',
                 'email' =>'cliente@gmail.com',
                 'password' => bcrypt('123456789'),
                 'role' => 'CLI'
@@ -38,6 +41,7 @@ return new class extends Migration
             [
                 'name' => 'Afro',
                 'surname' =>'De Carvalho',
+                'phone' => '654321987',
                 'DNI' => '1245789Z',
                 'email' => 'afro@gmail.com',
                 'role' => 'TRA',
@@ -46,6 +50,7 @@ return new class extends Migration
             [
                 'name' => 'Cristina',
                 'surname' =>'Turón',
+                'phone' => '654321987',
                 'DNI' => '14700254C',
                 'email' => 'cristina@gmail.com',
                 'role' => 'TRA',
@@ -54,6 +59,7 @@ return new class extends Migration
             [
                 'name' => 'Daniela',
                 'surname' =>'Prato',
+                'phone' => '654321987',
                 'DNI' => '47521368A',
                 'email' => 'daniela@gmail.com',
                 'role' => 'TRA',
@@ -62,6 +68,7 @@ return new class extends Migration
             [
                 'name' => 'Jorge',
                 'surname' =>'Martinez',
+                'phone' => '654321987',
                 'DNI' => '75842366S',
                 'email' => 'jorge@gmail.com',
                 'role' => 'TRA',

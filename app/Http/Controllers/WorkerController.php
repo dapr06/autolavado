@@ -33,6 +33,7 @@ class WorkerController extends Controller
                 $user = new User();
                 $user->name = $worker->name;
                 $user->surname = $worker->surname;
+                $user->phone = $worker->phone;
                 $user->email = $worker->email;
                 $user->password = bcrypt('123456789');
 
@@ -67,6 +68,7 @@ class WorkerController extends Controller
 
             $worker->name = $request->name;
             $worker->surname = $request->surname;
+            $worker->phone = $request->phone;
             $worker->DNI = $request->DNI;
             $worker->email = $request->email;
             $worker->role = $request->role;

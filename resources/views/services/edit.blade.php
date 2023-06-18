@@ -6,7 +6,11 @@
             <form action='{{route('services.update', $service)}}' method='post'>
                 @method('put')
                 <label for='category_id'> Categoría </label>
-                <input type='text' id='category_id' name='category_id' value='{{ $service->category->category }}'/>
+                <select id='category_id' name='category_id'>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->category }} </option>
+                    @endforeach
+                </select>
                 <br>
                 <label for='name'>Nombre </label>
                 <input id='name' name='name' type='text' value='{{ $service->name }}'>

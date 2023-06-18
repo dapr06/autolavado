@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\MyvehicleController;
 use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\CartController;
 use App\Models\Category;
@@ -50,35 +51,37 @@ Route::middleware(['auth', 'can:view-services'])->group(function () {
     Route::resource('services', ServiceController::class);
 });
 
-//PUEDEN ACCEDER ADM Y ROL
+//PUEDEN ACCEDER ADM Y TRA
 Route::middleware(['auth', 'can:view-bookings'])->group(function () {
     Route::resource('bookings', BookingController::class);
-});
-Route::middleware(['auth', 'can:view-vehicles'])->group(function () {
-    Route::resource('vehicles', VehicleController::class);
 });
 Route::middleware(['auth', 'can:view-clients'])->group(function () {
     Route::resource('clients', ClientController::class);
 });
+Route::middleware(['auth', 'can:view-vehicles'])->group(function () {
+    Route::resource('vehicles', VehicleController::class);
+});
 
+
+//PUEDEN ACCEDER CLI
+Route::middleware(['auth', 'can:view-myvehicles'])->group(function () {
+    Route::resource('myvehicles', MyvehicleController::class);
+});
+Route::middleware(['auth', 'can:view-cart'])->group(function () {
+    Route::resource('cart', CartController::class);
+});
+Route::middleware(['auth', 'can:view-addcart'])->group(function () {
+    Route::resource('addcart', ServiceController::class);
+});
 require __DIR__.'/auth.php';
 
-// Para no estar registrados y que se pueda ver
-/*Route::get('/services', function () {
-    $services = \App\Models\Service::orderBy('id')->get();
-    $categories = Category::orderBy('category')->get();
 
-    return view('/services/index', compact('services', 'categories'));
-})->name('services.index');*/
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 
 
 Route::get('/contacts', function () {
     return view('/contacts/index');
 })->name('contacts.index');
-
-
-// routes/web.php
 
 Route::group(['middleware' => 'auth'], function () {
     // Rutas para el carrito de compras

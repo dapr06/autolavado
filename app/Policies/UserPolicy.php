@@ -49,4 +49,22 @@ class UserPolicy
             ? Response::allow()
             : Response::deny('No tienes permiso para ver los clientes.');
     }
+    public function viewMyvehicles(User $user)
+    {
+        return $user->hasRole(User::ROLE_CLI)
+            ? Response::allow()
+            : Response::deny('No tienes permiso, solo pueden verlo los clientes.');
+    }
+    public function viewCart(User $user)
+    {
+        return $user->hasRole(User::ROLE_CLI)
+            ? Response::allow()
+            : Response::deny('No tienes permiso, solo pueden verlo los clientes.');
+    }
+    public function viewAddcart(User $user)
+    {
+        return $user->hasRole(User::ROLE_CLI)
+            ? Response::allow()
+            : Response::deny('No tienes permiso, solo pueden verlo los clientes.');
+    }
 }

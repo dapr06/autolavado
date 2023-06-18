@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('surname', 50);
+            $table->string('phone')->nullable();
             $table->char('DNI', 9);
             $table->char('email', 40);
             $table->string('role', 3);

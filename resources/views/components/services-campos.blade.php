@@ -1,5 +1,9 @@
-<label for='category_id'> Id categoria </label>
-<input type='text' id='category_id' name='category_id' value='{{ $service->category_id ?? '' }}'/>
+<label for='category_id'> Categoría </label>
+<select id='category_id' name='category_id'>
+    @foreach ($categories as $category)
+        <option value="{{ $category->id }}">{{ $category->category }} </option>
+    @endforeach
+</select>
 <br>
 <label for='name'> Nombre </label>
 <input type='text' id='name' name='name' value='{{ $service->name ?? '' }}'/>

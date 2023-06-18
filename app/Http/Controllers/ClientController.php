@@ -26,15 +26,17 @@ class ClientController extends Controller
 
         $client = new Client();
         $client->name = $validatedData['name'];
-        $client->email = $validatedData['email'];
         $client->surname = $validatedData['surname'];
         $client->phone = $validatedData['phone'];
+        $client->email = $validatedData['email'];
         $client->save();
 
         // Crear el usuario correspondiente al cliente
         $user = new User();
-        $user->email = $client->email;
         $user->name = $client->name;
+        $user->surname = $client->surname;
+        $user->phone = $client->phone;
+        $user->email = $client->email;
         $user->password = bcrypt('123456789'); // Contraseña predeterminada (puedes cambiarla)
         $user->save();
 

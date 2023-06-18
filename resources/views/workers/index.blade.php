@@ -8,9 +8,10 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
+                        <th>Teléfono</th>
                         <th>DNI</th>
                         <th>Correo electrónico</th>
-                        <th>Rol</th>
+                        <th hidden>Rol</th>
                         <th>Turno</th>
                         <th>Eliminar</th>
                     </tr>
@@ -20,9 +21,10 @@
                         <tr>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->name }}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->surname}}</a></td>
+                            <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->phone}}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->DNI }}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->email}}</a></td>
-                            <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->role }}</a></td>
+                            <td hidden><a href='{{ route('workers.show', $worker) }}'>{{ $worker->role }}</a></td>
                             <td><a href='{{ route('workers.show', $worker) }}'>{{ $worker->turn == 0 ? 'Mañana' : 'Tarde' }}</a></td>
                             <td>
                                 <form action='{{ route('workers.destroy', $worker) }}' method='post'>

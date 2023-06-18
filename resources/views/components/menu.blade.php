@@ -21,11 +21,18 @@
             <li class="nav-item top">
                 <a class="nav-link" href="{{ url('/contacts') }}">Contacto</a>
             </li>
+            @can('view-myvehicles')
+                <li class="nav-item top">
+                    <a class="nav-link" href="{{ url('/myvehicles') }}">Mis vehículos</a>
+                </li>
+            @endcan
+            @can('view-cart')
             <li class="nav-item top">
                 <a class="nav-link" href="{{ route('cart.view') }}">
                     <img src="/img/carrito.png" class="iconSize" alt="Carrito">
                 </a>
             </li>
+            @endcan
             @can('view-workers')
                 <li class="nav-item top">
                     <a class="nav-link" href="{{ url('/workers') }}">Trabajadores</a>

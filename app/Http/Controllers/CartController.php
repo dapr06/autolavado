@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Vehicle;
 
 class CartController extends Controller
 {
@@ -42,11 +43,10 @@ class CartController extends Controller
 
     public function viewCart()
     {
-        // Obtén los elementos del carrito del usuario autenticado
         $cartItems = auth()->user()->cartItems;
-
-        // Puedes pasar los elementos del carrito a la vista
-        return view('cart.view', compact('cartItems'));
+        $vehicles = auth()->user()->clientVehicles()->orderBy('number_plate')->get();
+        return view('cart.show', compact('cartItems', 'vehicles'));
     }
+
 
 }

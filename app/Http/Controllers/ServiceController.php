@@ -19,8 +19,9 @@ class ServiceController extends Controller
 
     public function create()
     {
+        $categories = Category::orderBy('category')->get();
         $services = Service::orderBy('name')->get();
-        return view('services/create', compact('services'));
+        return view('services/create', compact('services', 'categories'));
     }
 
     public function store(Request $request)
@@ -52,7 +53,8 @@ class ServiceController extends Controller
 
     public function edit(Service $service)
     {
-        return view('services/edit', compact('service'));
+        $categories = Category::orderBy('category')->get();
+        return view('services/edit', compact('service', 'categories'));
     }
 
     public function update(Request $request, Service $service)

@@ -8,6 +8,7 @@
                     <form id='{{ $worker->id }}' action='{{ route('workers.destroy', $worker) }}' method='post'>
                         <p>Nombre: {{$worker->name}}</p>
                         <p>Apellido: {{$worker->surname}}</p>
+                        <p>Teléfono: {{$worker->phone}}</p>
                         <p>DNI: {{$worker->DNI}}</p>
                         <p>Correo electrónico: {{$worker->email}}</p>
                         <p>Rol: {{$worker->role}}</p>

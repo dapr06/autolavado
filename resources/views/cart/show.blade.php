@@ -108,9 +108,16 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-center">Información de contacto</h4><br>
-                        <p class="text-justify">Para cualquier consulta no dude en contartar con nosotros atraves del número <strong>645789123</strong> o por correo electrónico
-                            en la pagina de Contacto mediante el formulario</p>
+                        <h4 class="text-center">Fecha y hora</h4><br>
+                        <p class="text-justify">Seleccione el día y la hora</p>
+                        <input type="date" id="reservation_date" name="reservation_date" required>
+                        <input type="time" id="reservation_time" name="reservation_time" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" id="acceptReservationBtn">Aceptar reserva</button>
                     </div>
                 </div>
             </div>
@@ -119,3 +126,11 @@
 </div>
 
 <x-footer/>
+<script>
+    document.getElementById("acceptReservationBtn").addEventListener("click", function() {
+        if (confirm("¿Está seguro de que desea aceptar la reserva?")) {
+            window.location.href = "{{ url('/') }}?message=Reserva realizada con éxito";
+        }
+    });
+
+   </script>

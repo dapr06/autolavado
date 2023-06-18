@@ -16,6 +16,7 @@ class WorkerRequest extends FormRequest
         return [
             'name' => 'required|alpha_spaces|max:50',
             'surname' => 'required|alpha_spaces|max:50',
+            'phone' => 'required|numeric|digits:9',
             'DNI' => 'required|regex:/^[0-9]{8}[a-zA-Z]$/',
             'email' => 'required|email',
             'role' => 'required',
@@ -32,6 +33,9 @@ class WorkerRequest extends FormRequest
             'surname.required' => 'El apellido es obligatorio.',
             'surname.alpha_spaces' => 'El apellido no puede contener números ni caracteres.',
             'surname.max' => 'El apellido no puede tener más de 50 caracteres.',
+            'phone.required' => 'El teléfono es obligatorio.',
+            'phone.numeric' => 'El teléfono debe ser un número.',
+            'phone.digits' => 'El teléfono debe tener 9 dígitos.',
             'DNI.required' => 'El DNI es obligatorio.',
             'DNI.regex' => 'El DNI debe tener el formato correcto (8 números y 1 letra).',
             'email.required' => 'El correo electrónico es obligatorio.',

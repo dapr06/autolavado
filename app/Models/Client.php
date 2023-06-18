@@ -5,15 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Vehicle;
+use App\Models\Myvehicle;
 use App\Models\User;
 
 class Client extends Model
 {
     use HasFactory;
 
-    public function clients()
+    public function vehicles()
     {
         return $this->hasMany(Vehicle::class);
+    }
+    public function myvehicles()
+    {
+        return $this->hasMany(Myvehicle::class);
     }
 
     protected static function boot()

@@ -9,7 +9,7 @@ use App\Models\User;
 class Worker extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'surname', 'DNI', 'email', 'role', 'turn'];
+    protected $fillable = ['name', 'surname', 'phone', 'DNI', 'email', 'role', 'turn'];
 
     protected static function boot()
     {

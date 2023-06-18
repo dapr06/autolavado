@@ -3,18 +3,13 @@
     <br><h1 class="text-center">Registrar un nuevo vehículo</h1>
     <div class="row">
         <div class="col-md-12">
-            <form action='{{ route('vehicles.store') }}' method='post'>
+            <form action='{{ route('myvehicles.store') }}' method='post'>
                 @method('post')
                 @csrf
                 <label for='client_id'>Propietario/a<span class="required">*</span></label>
                 <select id='client_id' name='client_id'>
-                    @foreach ($clients as $client)
-                        <option value="{{ $client->id }}" {{ old('client_id') == $client->id ? 'selected' : '' }}>{{ $client->name }} {{ $client->surname }}</option>
-                    @endforeach
+                    <option value="{{ auth()->user()->client->id }}">{{ auth()->user()->client->name }} {{ auth()->user()->client->surname }}</option>
                 </select>
-                @error('client_id')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
 
                 <label for='number_plate'>Matrícula<span class="required">*</span></label>
                 <input type='text' id='number_plate' name='number_plate' value="{{ old('number_plate', isset($vehicle) ? $vehicle->number_plate : '') }}">
@@ -55,7 +50,7 @@
                 @enderror
 
                 <button class="btn btn-danger text-white">Registrar vehículo</button>
-                <button class="btn btn-info text-white"><a href="{{ route('vehicles.index') }}" class="text-white">Volver</a></button><br><br>
+                <button class="btn btn-info text-white"><a href="{{ route('myvehicles.index') }}" class="text-white">Volver</a></button><br><br>
             </form><br/>
         </div>
     </div>

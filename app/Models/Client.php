@@ -26,5 +26,16 @@ class Client extends Model
             }
         });
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    protected $fillable = [
+        'name',
+        'surname',
+        'email',
+        'password',
+        'role'
+    ];
 
 }

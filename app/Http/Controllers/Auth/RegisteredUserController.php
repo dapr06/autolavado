@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Client;
 
 class RegisteredUserController extends Controller
 {
@@ -45,10 +46,25 @@ class RegisteredUserController extends Controller
             'role' => 'CLI',
         ]);
 
-        event(new Registered($user));
+        if ($user->role === 'CLI') {
+            $clientData = [
+                'name' => $request->name, // Nombre del cliente
+                'surname' => $request->surname,
+                'email' => $request->email, // Valor para la columna "email" del cliente
+                // Otros datos del cliente que deseas guardar
+            ];
+
+            $client = new Client($clientData);
+            $user->client()->save($client);
+
+
+            $client->user()->associate($user);
+            $client->save();
+        }
 
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }
+
 }

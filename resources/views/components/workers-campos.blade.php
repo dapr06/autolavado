@@ -22,8 +22,8 @@
 <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 
-<label for='role'>  Rol<span class="required">*</span></label>
-<input type='text' id='role' name='role' value="{{ old('role', isset($worker) ? $worker->role : '') }}">
+<label for="role">Rol<span class="required">*</span></label>
+<input type="text" id="role" name="role" value="TRA" disabled>
 @error('role')
 <div class="alert alert-danger">{{ $message }}</div>
 @enderror

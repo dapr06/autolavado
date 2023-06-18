@@ -34,7 +34,7 @@
                             @endif
                         </form>
                         @can('view-services')
-                            <form action='{{ route('services.destroy', $service) }}' method='post'>
+                            <form action='{{ route('services.destroy', $service) }}' method='post' class="text-center">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-primary text-white"><a href="{{ route('services.edit', $service) }}" class="text-white">Editar</a></button>

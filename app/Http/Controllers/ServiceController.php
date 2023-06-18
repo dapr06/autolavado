@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection as collect;
 
 class ServiceController extends Controller
 {
@@ -12,7 +13,7 @@ class ServiceController extends Controller
     {
         $categories = Category::orderBy('category')->get();
         $services = Service::orderBy('name')->get();
-        $cartItems = auth()->user()->cartItems;
+        $cartItems = auth()->check() ? auth()->user()->cartItems : collect();
         return view('services/index', compact('services', 'categories', 'cartItems'));
     }
 

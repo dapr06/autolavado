@@ -18,63 +18,11 @@ return new class extends Migration
                 'password' => bcrypt('123456789'),
                 'role' => 'ADM'
             ],
-            [
-                'name' => 'trabajador',
-                'surname' => 'trabajador',
-                'phone' =>'000000000',
-                'email' =>'trabajador@gmail.com',
-                'password' => bcrypt('123456789'),
-                'role' => 'TRA'
-            ],
-            [
-                'name' => 'cliente',
-                'surname' => 'cliente',
-                'phone' =>'000000000',
-                'email' =>'cliente@gmail.com',
-                'password' => bcrypt('123456789'),
-                'role' => 'CLI'
-            ]
+
         ]);
 
 
-        DB::table('workers')->insert([
-            [
-                'name' => 'Afro',
-                'surname' =>'De Carvalho',
-                'phone' => '654321987',
-                'DNI' => '1245789Z',
-                'email' => 'afro@gmail.com',
-                'role' => 'TRA',
-                'turn' => '0',
-            ],
-            [
-                'name' => 'Cristina',
-                'surname' =>'Turón',
-                'phone' => '654321987',
-                'DNI' => '14700254C',
-                'email' => 'cristina@gmail.com',
-                'role' => 'TRA',
-                'turn' => '0',
-            ],
-            [
-                'name' => 'Daniela',
-                'surname' =>'Prato',
-                'phone' => '654321987',
-                'DNI' => '47521368A',
-                'email' => 'daniela@gmail.com',
-                'role' => 'TRA',
-                'turn' => '0',
-            ],
-            [
-                'name' => 'Jorge',
-                'surname' =>'Martinez',
-                'phone' => '654321987',
-                'DNI' => '75842366S',
-                'email' => 'jorge@gmail.com',
-                'role' => 'TRA',
-                'turn' => '0',
-            ]
-        ]);
+
         DB::table('clients')->insert([
             [
                 'name' =>'Cristina',
@@ -158,95 +106,76 @@ return new class extends Migration
             [
                 'category_id' => '1',
                 'name' =>'Lavado interior estándar',
-                'description' => 'Lavado interior del vehículo.',
+                'description' => 'Limpieza profunda del interior de tu vehículo. Nuestro equipo se encargará de limpiar y desinfectar cada rincón.',
                 'time' => '20',
                 'price' => '15',
             ],
             [
                 'category_id' => '1',
                 'name' =>'Lavado interior premium',
-                'description' => 'Lavado interior del vehículo.',
+                'description' => 'Limpieza exhaustiva con aspiración profunda de alfombras y tapicería, eliminación de manchas y olores',
                 'time' => '30',
                 'price' => '20',
             ],
             [
                 'category_id' => '2',
                 'name' =>'Lavado exterior estándar',
-                'description' => 'Lavado exterior del vehículo.',
+                'description' => 'Carrocería limpia. Elimina suciedad para un vehículo reluciente.',
                 'time' => '10',
                 'price' => '10',
             ],
             [
                 'category_id' => '2',
                 'name' =>'Lavado exterior premium',
-                'description' => 'Lavado exterior del vehículo.',
+                'description' => 'Lavado exterior del vehículo. Brillo intenso.',
                 'time' => '20',
                 'price' => '15',
             ],
             [
                 'category_id' => '1',
                 'name' =>'Limpieza de techo interior y paneles',
-                'description' => 'Elimina manchas y suciedad de los paneles de techo y otros revestimientos interiores.',
+                'description' => 'Elimina manchas de techos y revestimientos.',
                 'time' => '50',
                 'price' => '45',
             ],
             [
                 'category_id' => '1',
                 'name' =>'Limpieza y acondicionamiento de cuero',
-                'description' => 'Limpia y nutre los asientos y revestimientos de cuero, dejándolos suaves y protegidos.',
+                'description' => 'Cuero limpio y protegido. Suavidad asegurada.',
                 'time' => '90',
                 'price' => '60',
             ],
             [
                 'category_id' => '2',
                 'name' =>'Encerado',
-                'description' => 'Aplicación de cera protectora en la carrocería.',
+                'description' => 'Cera protectora para carrocería.',
                 'time' => '50',
                 'price' => '30',
             ],
             [
                 'category_id' => '2',
                 'name' =>'Pulido y abrillantado de carrocería',
-                'description' => 'Elimina arañazos y marcas superficiales, dejando la carrocería con un brillo intenso.',
+                'description' => 'Elimina arañazos. Brillo intenso.',
                 'time' => '120',
                 'price' => '150',
             ],
             [
                 'category_id' => '3',
                 'name' =>'Restauración de faros delanteros',
-                'description' => 'Elimina el desgaste y la opacidad de los faros, mejorando la visibilidad y la apariencia del vehículo.',
+                'description' => 'Mejora visibilidad y apariencia. Faros renovados.',
                 'time' => '60',
                 'price' => '70',
             ],
             [
                 'category_id' => '4',
                 'name' =>'Detallado completo',
-                'description' => 'Incluye lavado exterior premium, limpieza exhaustiva del interior, pulido de carrocería, encerado y limpieza de motor.',
+                'description' => 'Lavado premium, limpieza interior, pulido, encerado y limpieza de motor.',
                 'time' => '180',
                 'price' => '120',
             ]
         ]);
 
-        DB::table('bookings')->insert([
-            [
-                'service_id' => '1',
-                'client_id' =>'1',
-                'vehicle_id' => '1',
-                'date' => '2023/07/15',
-                'hour' => '16:00',
-                'number_services' => '3',
-                'total_price' => '150',
-            ],
-            [
-                'service_id' => '2',
-                'client_id' =>'2',
-                'vehicle_id' => '2',
-                'date' => '2023/07/16',
-                'hour' => '16:10',
-                'number_services' => '2',
-                'total_price' => '170',
-            ]
-        ]);
+
     }
 
 

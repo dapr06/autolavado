@@ -53,11 +53,6 @@
                     <a class="nav-link" href="{{ url('/categories') }}">Categorías</a>
                 </li>
             @endcan
-            @can('view-bookings')
-                <li class="nav-item top">
-                    <a class="nav-link" href="{{ url('/bookings') }}">Reservas</a>
-                </li>
-            @endcan
             @if (Route::has('login'))
                 @auth
                     <li class="nav-item">
